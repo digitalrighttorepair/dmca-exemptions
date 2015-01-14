@@ -139,7 +139,7 @@ Schemas.Contact = new SimpleSchema({
    postalcode: {
       type: String,
       label: 'Postal Code',
-      regEx: /^[0-9]{5}(?:-[0-9]{4})/
+      regEx: /^[0-9]{5}(?:-[0-9]{4})?$/
    }, 
    phone: {
       type: String,
