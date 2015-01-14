@@ -96,10 +96,9 @@ var exemption_requests =
  ];
 
 var Collections = {};
+var Schemas = {};
 
-Collections.Exemptions = new Mongo.Collection("exemptions");
-
-Collections.Exemptions.attachSchema(new SimpleSchema({
+Schemas.Contact = new SimpleSchema({
    email: {
       type: String,
       label: 'Email',
@@ -140,14 +139,17 @@ Collections.Exemptions.attachSchema(new SimpleSchema({
    postalcode: {
       type: String,
       label: 'Postal Code',
-      regEx: /^[0-9]{5}(?:-[0-9]{4})$/
+      regEx: /^[0-9]{5}(?:-[0-9]{4})/
    }, 
    phone: {
       type: String,
       label: 'Phone',
       max: 55
    }
-}));
+});
+
+Collections.Exemptions = new Mongo.Collection("exemptions");
+Collections.Exemptions.attachSchema(Schemas.Contact);
 
 if (Meteor.isClient) {
    Template.exemptionsForm.helpers({
