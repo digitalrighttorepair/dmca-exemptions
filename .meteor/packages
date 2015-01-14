@@ -8,3 +8,5 @@ meteor-platform
 autopublish
 insecure
 twbs:bootstrap
+aldeed:autoform
+aldeed:collection2
