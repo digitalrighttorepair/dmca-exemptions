@@ -159,7 +159,6 @@ if (Meteor.isClient) {
 
     exemption_requests: function() {
          var len = exemption_requests.length;
-         console.log(len / 3 * 2 - 1);
          return [
             {'exemption' : exemption_requests.slice(0, len / 3)},
             {'exemption' : exemption_requests.slice(len / 3, len / 3 * 2)},
