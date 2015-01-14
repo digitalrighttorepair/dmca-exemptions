@@ -145,6 +145,14 @@ Schemas.Contact = new SimpleSchema({
       type: String,
       label: 'Phone',
       max: 55
+   },
+   message: {
+      type: String,
+      label: 'Message',
+      max: 2500,
+      autoform: {
+         rows: 10
+      }
    }
 });
 
