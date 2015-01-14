@@ -1,4 +1,3 @@
-
 var Exemptions = new Mongo.Collection("exemptions");
 
 var us_states = [
