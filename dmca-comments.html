@@ -12,7 +12,7 @@
             <p>Copyright law is shaping up to be the next big battleground in technology. It's fundamentally redefining ownership. And there's something you can do about it. Right now.</p>
             <p>Following on the heels of the phone carrier's defeated campaign to criminalize cell phone unlocking, the Copyright Office is considering opening up a number of additional freedoms to consumers, students, and repair shops.</p>
 	    <p>But they'll only grant us those freedoms (freedoms we should have by default) if we can demonstrate 'overwhelming market need.' That's where you come in.</p>
-	    <p>Which of these would you like to be able do?</p>
+	    <p>Which of these things would you like to be able do?</p>
 	    
             {{> exemptionsForm}}
             {{> contactForm}}
@@ -23,14 +23,22 @@
 
 <template name="exemptionsForm">
    <form class="exemptions-form form-horizontal">
+      <h3>Exemptions</h3>
       <fieldset>
          <div class="form-group">
-           <label class="col-md-2 control-label" for="exemption_requests">Exemptions</label>
-           <div class="col-md-5">
-               {{#each exemption_requests}}
-                  <input type="checkbox" id="exemption-{{index}}" name="exemption" class="form-control">{{title}}
+           {{#each exemption_requests}}
+           <div class="col-md-4">
+               {{#each exemption}}
+		  <div class="checkbox">
+	          <label>
+                  <input type="checkbox" id="exemption-{{index}}" name="exemption" {{checked enabled}}>
+                  <strong>{{title}}</strong><br />
+		  <em>{{right}}</em>
+		  </label>
+		  </div>
                {{/each}}
            </div>
+               {{/each}}
          </div>
        </fieldset>
    </form>
