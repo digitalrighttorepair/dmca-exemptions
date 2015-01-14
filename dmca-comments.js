@@ -159,13 +159,20 @@ if (Meteor.isClient) {
 
     exemption_requests: function() {
          var len = exemption_requests.length;
-         console.log(len / 3 * 2 - 1);
          return [
             {'exemption' : exemption_requests.slice(0, len / 3)},
             {'exemption' : exemption_requests.slice(len / 3, len / 3 * 2)},
             {'exemption' : exemption_requests.slice(len / 3 * 2, len)}
         ];
       }
+   });
+
+   Template.exemptionsForm.events({
+      'click .checkbox': function(ev) {
+	  ev.preventDefault();
+	  $(ev.target).find('.description').toggle();
+	  $(ev.target).find('input').checked;
+       }
    });
 
    UI.registerHelper("Collections", Collections);

@@ -30,11 +30,12 @@
            <div class="col-md-4">
                {{#each exemption}}
 		  <div class="checkbox">
-	          <label>
-                  <input type="checkbox" id="exemption-{{index}}" name="exemption" {{checked enabled}}>
-                  <strong>{{title}}</strong><br />
-		  <em>{{right}}</em>
-		  </label>
+                     <label>
+                        <input type="checkbox" id="exemption-{{index}}" name="exemption" {{checked enabled}}>
+                        <strong>{{title}}</strong><br />
+	                <em>{{right}}</em>
+		        <span class="description">{{description}}</span>
+		     </label>
 		  </div>
                {{/each}}
            </div>
