@@ -14,14 +14,30 @@
 	    <p>But they'll only grant us those freedoms (freedoms we should have by default) if we can demonstrate 'overwhelming market need.' That's where you come in.</p>
 	    <p>Which of these would you like to be able do?</p>
 	    
+            {{> exemptionsForm}}
             {{> contactForm}}
          </div>
       </div>
    </div>
 </body>
 
-<template name="contactForm">
+<template name="exemptionsForm">
    <form class="exemptions-form form-horizontal">
+      <fieldset>
+         <div class="form-group">
+           <label class="col-md-2 control-label" for="exemption_requests">Exemptions</label>
+           <div class="col-md-5">
+               {{#each exemption_requests}}
+                  <input type="checkbox" id="exemption-{{index}}" name="exemption" class="form-control">{{title}}
+               {{/each}}
+           </div>
+         </div>
+       </fieldset>
+   </form>
+</template>
+
+<template name="contactForm">
+   <form class="contact4-form form-horizontal">
       <fieldset>
          <!-- Text input-->
          <div class="form-group">
