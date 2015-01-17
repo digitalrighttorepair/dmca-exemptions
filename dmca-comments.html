@@ -1,51 +1,81 @@
 <head>
-  <title>Tell the Copyright Office You Demand Back Your Right to Repair</title>
+<title>Tell the Copyright Office You Demand Back Your Right to Repair</title>
 </head>
 
 <body>
-   <div class="container-fluid">
-      <div class="row">
-         <div class="col-md-6 col-md-offset-3">
-            <h1>Demand Back Your Right to Repair</h1>
-	    <h2>Tell the Copyright Office to give us back our freedom.</h2>
-
-            <p>Copyright law is shaping up to be the next big battleground in technology. It's fundamentally redefining ownership. And there's something you can do about it. Right now.</p>
-            <p>Following on the heels of the phone carrier's defeated campaign to criminalize cell phone unlocking, the Copyright Office is considering opening up a number of additional freedoms to consumers, students, and repair shops.</p>
-	    <p>But they'll only grant us those freedoms (freedoms we should have by default) if we can demonstrate 'overwhelming market need.' That's where you come in.</p>
-	    <p>Which of these things would you like to be able do?</p>
-	    
-            {{> exemptionsForm}}
-            {{> contactForm}}
-         </div>
-      </div>
-   </div>
 </body>
 
+<template name="layout">
+<div class="container-fluid">
+   <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+         {{> yield}}
+      </div>
+   </div>
+</div>
+</template>
+
+<template name="home">
+   <img class="logo" src="http://static1.squarespace.com/static/53821f30e4b07bcdae103594/t/53822049e4b007073a0c4fa5/1418855092200/?format=1500w" />
+
+   <h1>Demand Back Your Right to Repair</h1>
+   <h2>Tell the Copyright Office to give us back our freedom.</h2>
+
+   <p>Copyright law is shaping up to be the next big battleground in technology. It's fundamentally redefining ownership. And there's something you can do about it. Right now.</p>
+   <p>Following on the heels of the phone carrier's defeated campaign to criminalize cell phone unlocking, the Copyright Office is considering opening up a number of additional freedoms to consumers, students, and repair shops.</p>
+   <p>But they'll only grant us those freedoms (freedoms we should have by default) if we can demonstrate 'overwhelming market need.' That's where you come in.</p>
+
+   <a href="/exemptions" class="btn action-nav">Speak Now!</a>
+</template>
+
+<template name="exemptions">
+   <h1><span class="step-num">1.</span> Select your exemptions</h1>
+   <p>Which of these things would you like to be able do?</p>
+   {{> exemptionsForm}}
+   <a href="/information" class="btn action-nav">Continue</a>
+</template>
+
+<template name="information">
+   <h1><span class="step-num">2.</span> Tell us your story</h1>
+   <p>For each of the exemptions you selected, we need you to write a paragraph or two describing your story and why you'd like to do these things.</p>
+   <a href="/contact" class="btn action-nav">Continue</a>
+</template>
+
+<template name="contact">
+   <h1><span class="step-num">3.</span> Fill in your information</h1>
+   <p>The copyright office requrires this.</p>
+   {{> contactForm}}
+</template>
+
+<template name="success">
+   <h1>Success.</h1>
+</template>
+
 <template name="exemptionsForm">
-   <form class="exemptions-form form-horizontal">
-      <h3>Exemptions</h3>
-      <fieldset>
-         <div class="form-group">
-           {{#each exemption_requests}}
-           <div class="col-md-4">
-               {{#each exemption}}
-		  <div class="checkbox">
-                     <label>
-                        <input type="checkbox" id="exemption-{{index}}" name="exemption" {{checked enabled}}>
-                        <strong>{{title}}</strong><br />
-	                <em>{{right}}</em>
-		        <span class="description">{{description}}</span>
-		     </label>
-		  </div>
-               {{/each}}
-           </div>
-               {{/each}}
+<form class="exemptions-form form-horizontal">
+   <h3>Exemptions</h3>
+   <fieldset>
+      <div class="form-group">
+         {{#each exemption_requests}}
+         <div class="col-md-4">
+            {{#each exemption}}
+            <div class="checkbox">
+               <label>
+                  <input type="checkbox" id="exemption-{{index}}" name="exemption" {{checked enabled}}>
+                  <strong>{{title}}</strong><br />
+                  <em>{{right}}</em>
+                  <span class="description">{{description}}</span>
+               </label>
+            </div>
+            {{/each}}
          </div>
-       </fieldset>
-   </form>
+         {{/each}}
+      </div>
+   </fieldset>
+</form>
 </template>
 
 <template name="contactForm">
-  {{> quickForm collection=Collections.Exemptions id="contactForm" type="insert"}}
+{{> quickForm collection=Collections.Exemptions id="contactForm" type="insert"}}
 </template>
 

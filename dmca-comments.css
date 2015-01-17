@@ -1,5 +1,15 @@
-/* CSS declarations go here */
+.logo {
+   margin: 0 auto;
+   width: 500px;
+   display: block;
+}
+
 .description {
    font-size: 8px;
    display: none;
+}
+
+.action-nav {
+   text-align: center;
+   font-size: 30px;
 }
