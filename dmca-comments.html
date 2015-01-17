@@ -18,32 +18,45 @@
 <template name="home">
    <img class="logo" src="http://static1.squarespace.com/static/53821f30e4b07bcdae103594/t/53822049e4b007073a0c4fa5/1418855092200/?format=1500w" />
 
-   <h1>Demand Back Your Right to Repair</h1>
+   <h1>Your rights are under attack</h1>
    <h2>Tell the Copyright Office to give us back our freedom.</h2>
 
-   <p>Copyright law is shaping up to be the next big battleground in technology. It's fundamentally redefining ownership. And there's something you can do about it. Right now.</p>
-   <p>Following on the heels of the phone carrier's defeated campaign to criminalize cell phone unlocking, the Copyright Office is considering opening up a number of additional freedoms to consumers, students, and repair shops.</p>
-   <p>But they'll only grant us those freedoms (freedoms we should have by default) if we can demonstrate 'overwhelming market need.' That's where you come in.</p>
+   <p>They made it illegal to unlock our phones. But we stood up to them, and President Obama agreed with us. Now they're considering taking even that away.</p>
 
-   <a href="/exemptions" class="btn action-nav">Speak Now!</a>
+   <p>Copyright law is shaping up to be the next big battleground in technology. It's fundamentally redefining ownership. And there's something you can do about it. Right now.</p>
+   <p>Following on the heels of the phone carrier's defeated campaign to criminalize cell phone unlocking, the Copyright Office is considering opening up a number of additional freedoms.</p>
+   <p>But they'll only grant them (freedoms we should have by default) if we can demonstrate 'overwhelming market need.' That's where you come in.</p>
+
+   <a href="/exemptions" class="btn action-nav">Storm the gates!</a>
+
+   <h3>But I heard the copyright office already made a comment form</h3>
+   <p>The copyright office made <a href="http://copyright.gov/1201/comment-forms/">their own form</a> for submitting comments, but it's cumbersome. (They make it difficult comment on more than one exemption).</p>
+
+   <p>The copyright office is also accepting video submissions! Burn your video to a DVD and mailed it to:</p>
+U.S. Copyright Office<br />
+101 Independence Ave. S.E.<br />
+Washington, D.C. 20559-6000<br />
+
+   <p>This work is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/us/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</p>
 </template>
 
 <template name="exemptions">
-   <h1><span class="step-num">1.</span> Select your exemptions</h1>
-   <p>Which of these things would you like to be able do?</p>
+   <h1><span class="step-num">1. </span>Proposed Exemptions</h1>
+   <p>What rights do you have a personal stake in the Copyright Office restoring?</p>
    {{> exemptionsForm}}
-   <a href="/information" class="btn action-nav">Continue</a>
-</template>
+   <a href="/information" class="btn action-nav">Let's do this</a>
+   <p><em>We will submit a short comment on your behalf for <strong>each</strong> category, so select carefully.</em></p></template>
 
 <template name="information">
-   <h1><span class="step-num">2.</span> Tell us your story</h1>
-   <p>For each of the exemptions you selected, we need you to write a paragraph or two describing your story and why you'd like to do these things.</p>
+   <h1><span class="step-num">2. </span> Tell us your story</h1>
+   <p>How do you (or would you) improve your life with these freedoms?</p>
+   <p>Why should these exemptions be granted?</p>
    <a href="/contact" class="btn action-nav">Continue</a>
 </template>
 
 <template name="contact">
-   <h1><span class="step-num">3.</span> Fill in your information</h1>
-   <p>The copyright office requrires this.</p>
+   <h1><span class="step-num">3.</span> Who are you?</h1>
+   <p>The Copyright Office wants to know how to contact you in case they need to follow up on your comments. We don't know why they're <a href="http://copyright.gov/1201/comment-forms/">requiring a mailing address</a> for each comment, but they are. And hey&mdash;no one said freedom was free.</p>
    {{> contactForm}}
 </template>
 
