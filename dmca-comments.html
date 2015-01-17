@@ -33,9 +33,11 @@
    <p>So we made their form better. You're welcome, <a hreef="http://en.wikipedia.org/wiki/Maria_Pallante">Maria</a>.</p>
 
    <p>In another awesome turn of events, the Copyright Office is also accepting video submissions! If you want to have an extra special impact, record your comments and burn your video to a DVD. Then and mail it to:</p>
-U.S. Copyright Office<br />
-101 Independence Ave. S.E.<br />
-Washington, D.C. 20559-6000<br />
+   <address>
+      U.S. Copyright Office<br />
+      101 Independence Ave. S.E.<br />
+      Washington, D.C. 20559-6000<br />
+   </address>
 
    <p>This work is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/us/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</p>
    <p>Darkness cannot drive out darkness.</p>
@@ -47,18 +49,12 @@ Washington, D.C. 20559-6000<br />
    <h1><span class="step-num">1. </span>Proposed Exemptions</h1>
    <p>What rights do you have a personal stake in?</p>
    {{> exemptionsForm}}
-   <a href="/information" class="btn action-nav">Restore our freedom</a>
-   <p><em>We will submit a short comment on your behalf for <strong>each</strong> category, so select carefully.</em></p></template>
-
-<template name="information">
-   <h1><span class="step-num">2. </span> Tell us your story</h1>
-   <p>How do you (or would you) improve your life with these freedoms?</p>
-   <p>Why should these exemptions be granted?</p>
-   <a href="/contact" class="btn action-nav">Let freedom ring</a>
+   <a href="/information" class="btn btn-default action-nav">Restore our freedom</a>
+   <p><em>We will submit a short comment on your behalf for <strong>each</strong> category, so select carefully.</em></p>
 </template>
 
 <template name="contact">
-   <h1><span class="step-num">3.</span> Who are you?</h1>
+   <h1><span class="step-num">2.</span> Who are you?</h1>
    <p>The Copyright Office wants to know how to contact you in case they need to follow up on your comments. We don't know why they're <a href="http://copyright.gov/1201/comment-forms/">requiring a mailing address</a> for each comment, but they are. And hey&mdash;no one said freedom was free.</p>
    {{> contactForm}}
 </template>
@@ -73,17 +69,30 @@ Washington, D.C. 20559-6000<br />
    <fieldset>
       <div class="form-group">
          {{#each exemption_requests}}
-         <div class="col-md-4">
-            {{#each exemption}}
-            <div class="checkbox">
-               <label>
-                  <input type="checkbox" id="exemption-{{index}}" name="exemption" {{checked enabled}}>
-                  <strong>{{title}}</strong><br />
-                  <em>{{right}}</em>
-                  <span class="description">{{description}}</span>
-               </label>
+         <div class="col-md-12">
+            {{#with exemption}}
+            <div class="exemption-group">
+               <h2>{{name}}</h2>
+               {{#each list}}
+               <section class="accordion-row">
+                  <div class="accordion-container row">
+                     <div class="check-container col-md-1">
+                        <input type="checkbox" name="exemption" class="exemption-group-select-all">
+                     </div>
+                     <div class="accordion-content col-md-11">
+                        <p class="accordion-title">{{title}}</p>
+                        <p class="accordion-subline">{{right}}</p>
+                        <p class="accordion-link"><a href="{{link}}">source</a></p>
+                     </div>
+                  </div>
+                  <div class="accordion-slide">
+                     <p class="accordion-description">{{description}}</p>
+                     <textarea rows="10">boom shakalaka</textarea>
+                  </div>
+               </section>
+               {{/each}}
             </div>
-            {{/each}}
+            {{/with}}
          </div>
          {{/each}}
       </div>
