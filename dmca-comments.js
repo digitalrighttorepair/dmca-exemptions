@@ -239,11 +239,16 @@ if (Meteor.isClient) {
    });
 
    Template.exemptionsForm.events({
-      'click .accordion-container': function(ev) {
-         var parent = $(ev.target).parents('.accordion-container');
+      'click .accordion-row': function(ev) {
+         var parent = $(ev.target).parents('.accordion-row');
          var checkbox = parent.find('input[type="checkbox"]');
          checkbox.prop('checked', !checkbox.is(':checked'));
-         $(ev.target).closest('.accordion-slide').show();
+         var slide = parent.children('.accordion-slide');
+         if (checkbox.is(':checked')) {
+            slide.slideDown(200); 
+         } else {
+            slide.slideUp(200); 
+         }
       }
    });
 
