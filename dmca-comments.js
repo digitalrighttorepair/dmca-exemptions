@@ -181,8 +181,6 @@ if (Meteor.isClient) {
 
    Router.route('/exemptions');
 
-   Router.route('/information');
-
    Router.route('/contact');
 
    Router.route('/success');
@@ -240,14 +238,21 @@ if (Meteor.isClient) {
 
    Template.exemptionsForm.events({
       'click .accordion-row': function(ev) {
-         var parent = $(ev.target).parents('.accordion-row');
+         var target = $(ev.target);
+         if (target.is('textarea')) {
+            return;
+         }
+
+         var parent = target.parents('.accordion-row');
          var checkbox = parent.find('input[type="checkbox"]');
-         checkbox.prop('checked', !checkbox.is(':checked'));
          var slide = parent.children('.accordion-slide');
+
+         checkbox.prop('checked', !checkbox.is(':checked'));
+
          if (checkbox.is(':checked')) {
-            slide.slideDown(200); 
+            slide.slideDown(400); 
          } else {
-            slide.slideUp(200); 
+            slide.slideUp(400); 
          }
       }
    });

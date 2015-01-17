@@ -4,6 +4,10 @@
    box-sizing: border-box;
 }
 
+h1, h2, h3, h4, h5, h6, p, li, textarea, input {
+   font-family: 'Open Sans', Helvetica, sans-serif;
+}
+
 .logo {
    margin: 0 auto;
    width: 250px;
@@ -24,10 +28,22 @@
 
 .accordion-row {
    border: 1px solid @border;
+   margin: 12px 0;
 }
 
 .accordion-container {
    cursor: pointer;
+}
+
+.check-container {
+   input {
+      margin: 36px 18px;
+      display: block;
+   }
+}
+
+.accordion-title {
+   font-weight: bold;
 }
 
 .accordion-subline {
@@ -36,5 +52,10 @@
 
 .accordion-slide {
    display: none;
+   padding: 6px 12px;
+
+   textarea {
+      width: 100%;
+   }
 }
 

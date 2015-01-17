@@ -65,14 +65,13 @@
 
 <template name="exemptionsForm">
 <form class="exemptions-form form-horizontal">
-   <h3>Exemptions</h3>
    <fieldset>
       <div class="form-group">
          {{#each exemption_requests}}
          <div class="col-md-12">
             {{#with exemption}}
             <div class="exemption-group">
-               <h2>{{name}}</h2>
+               <h3>{{name}}</h3>
                {{#each list}}
                <section class="accordion-row">
                   <div class="accordion-container row">
@@ -87,7 +86,7 @@
                   </div>
                   <div class="accordion-slide">
                      <p class="accordion-description">{{description}}</p>
-                     <textarea rows="10">boom shakalaka</textarea>
+                     <textarea class="exemption-content form-control" rows="10"></textarea>
                   </div>
                </section>
                {{/each}}
