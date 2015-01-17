@@ -27,6 +27,7 @@ h1, h2, h3, h4, h5, h6, p, li, textarea, input {
 }
 
 .accordion-row {
+   position: relative;
    border: 1px solid @border;
    margin: 12px 0;
 }
@@ -57,5 +58,15 @@ h1, h2, h3, h4, h5, h6, p, li, textarea, input {
    textarea {
       width: 100%;
    }
+}
+
+.accordion-link {
+   position: absolute;
+   right: 30px;
+   top: 8px;
+}
+
+.contact {
+   display: none;
 }
 

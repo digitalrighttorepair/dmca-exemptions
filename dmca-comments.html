@@ -26,6 +26,7 @@
    <p>But they'll only grant them (freedoms we should have by default) if we can demonstrate 'overwhelming market need.' That's where you come in.</p>
 
    <a href="/exemptions" class="btn btn-default action-nav">Storm the gates!</a>
+
    <h3>Didn't the Copyright Office already make a comment form?</h3>
    <p>They sure did. You can <a href="http://copyright.gov/1201/comment-forms/">see it here</a> if you scroll far enough, but it's cumbersome. You have to upload a Word document and they make it espeically difficult comment on more than one exemption.</p>
 
@@ -41,21 +42,25 @@
    <p>This work is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/us/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</p>
    <p>Darkness cannot drive out darkness.</p>
    <img class="logo" src="http://static1.squarespace.com/static/53821f30e4b07bcdae103594/t/53822049e4b007073a0c4fa5/1418855092200/?format=250w" />
-
 </template>
 
 <template name="exemptions">
-   <h1>Proposed Exemptions</h1>
-   <p>What rights do you have a personal stake in?</p>
-   {{> exemptionsForm}}
-   <a href="/contact" class="btn btn-default action-nav">Restore our freedom</a>
-   <p><em>We will submit a short comment on your behalf for <strong>each</strong> category, so select carefully.</em></p>
+   <div class="page exemptions">
+      <h1>Proposed Exemptions</h1>
+      <p>What rights do you have a personal stake in?</p>
+      {{> exemptionsForm}}
+      <a href="/contact" class="submit-exemptions btn btn-default action-nav">Restore our freedom</a>
+      <p><em>We will submit a short comment on your behalf for <strong>each</strong> category, so select carefully.</em></p>
+   </div>
+   {{> contact}}
 </template>
 
 <template name="contact">
-   <h1>Who are you?</h1>
-   <p>The Copyright Office wants to know how to contact you in case they need to follow up on your comments. We don't know why they're <a href="http://copyright.gov/1201/comment-forms/">requiring a mailing address</a> for each comment, but they are. And hey&mdash;no one said freedom was free.</p>
-   {{> contactForm}}
+   <div class="page contact">
+      <h1>Who are you?</h1>
+      <p>The Copyright Office wants to know how to contact you in case they need to follow up on your comments. We don't know why they're <a href="http://copyright.gov/1201/comment-forms/">requiring a mailing address</a> for each comment, but they are. And hey&mdash;no one said freedom was free.</p>
+      {{> contactForm}}
+   </div>
 </template>
 
 <template name="success">
@@ -75,17 +80,17 @@
                <section class="accordion-row">
                   <div class="accordion-container row">
                      <div class="check-container col-md-1">
-                        <input type="checkbox" name="exemption" class="exemption-group-select-all">
+                        <input type="checkbox" value="{{index}}" name="exemption_{{index}}" class="exemption-group-select-all">
                      </div>
                      <div class="accordion-content col-md-11">
                         <p class="accordion-title">{{title}}</p>
                         <p class="accordion-subline">{{right}}</p>
-                        <p class="accordion-link"><a href="{{link}}">source</a></p>
+                        <a class="accordion-link" href="{{link}}">source</a>
                      </div>
                   </div>
                   <div class="accordion-slide">
                      <p class="accordion-description">{{description}}</p>
-                     <textarea class="exemption-content form-control" rows="10"></textarea>
+                     <textarea name="message_{{index}}" class="exemption-content form-control" rows="10"></textarea>
                   </div>
                </section>
                {{/each}}
@@ -99,6 +104,19 @@
 </template>
 
 <template name="contactForm">
-{{> quickForm collection=Collections.Exemptions id="contactForm" type="insert"}}
+{{#autoForm collection=Collections.Contact id="contactForm" type="insert"}}
+  <span class="hidden">{{> afQuickField name='exemptionsid'}}</span>
+  {{> afQuickField name='email'}}
+  {{> afQuickField name='name'}}
+  {{> afQuickField name='address1'}}
+  {{> afQuickField name='address2'}}
+  {{> afQuickField name='city'}}
+  {{> afQuickField name='state'}}
+  {{> afQuickField name='postalcode'}}
+  {{> afQuickField name='phone'}}
+
+  <button type="submit" class="btn action-nav btn-primary">Submit</button>
+
+{{/autoForm}}
 </template>
 
