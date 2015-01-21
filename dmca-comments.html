@@ -64,15 +64,18 @@
    {{> back}}
    <div class="row">
       <div class="col-md-6 col-md-offset-3">
-         <div class="page exemptions">
+         <div class="page exemption-categories">
             <h1 class="page-title">Proposed Exemptions</h1>
             <h2 class="sub-title">What rights do you have a personal stake in?</h2>
             {{> exemptionsCategories}}
-            <a href="/contact" class="submit-exemptions btn btn-default action-nav">Restore our freedom</a>
-            <p><em>We will submit a short comment on your behalf for <strong>each</strong> category, so select carefully.</em></p>
          </div>
          {{> exemptionsForm}}
          {{> contact}}
+      </div>
+   </div>
+   <div class="row sticky-nav">
+      <div class="col-md-12">
+         <p>Select a category, then <a class="exemptions-continue btn btn-default action-nav">Continue <i class="fa fa-arrow-circle-right"></i></a></p>
       </div>
    </div>
 </template>
@@ -83,6 +86,7 @@
       <div class="exemption-group">
          <input type="checkbox" id="exemption_{{name}}" value="{{name}}">
          <label for="exemption_{{name}}">{{name}}</label>
+         <p>{{description}}</p>
       </div>
       {{/with}}
    {{/each}}
@@ -109,10 +113,7 @@
       <fieldset>
          <div class="form-group">
             {{#each exemption_requests}}
-            <div class="col-md-12">
                {{#with exemption}}
-               <div class="exemption-group">
-                  <h3>{{name}}</h3>
                   {{#each list}}
                   <section class="accordion-row">
                      <div class="accordion-container row">
@@ -131,9 +132,7 @@
                      </div>
                   </section>
                   {{/each}}
-               </div>
                {{/with}}
-            </div>
             {{/each}}
          </div>
       </fieldset>

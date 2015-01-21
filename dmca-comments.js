@@ -221,6 +221,11 @@ if (Meteor.isClient) {
    });
 
    Template.exemptions.events({
+      'click .exemptions-continue': function(ev) {
+         ev.preventDefault();
+         $('.exemption-categories').hide();
+         $('.exemptions').show();
+      },
       'click .submit-exemptions': function(ev) {
          ev.preventDefault();
          var form = $('.exemptions-form');

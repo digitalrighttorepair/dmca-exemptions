@@ -9,7 +9,7 @@
    -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, label {
    font-family: 'Montserrat', sans-serif;
 }
 
@@ -95,13 +95,19 @@ input[type=checkbox] { display:none; } /* to hide the checkbox itself */
 input[type=checkbox] + label:before {
   font-family: FontAwesome;
   display: inline-block;
+  font-size: 30px;
+  color: @red;
+}
+
+label {
+   font-size: 22px;
 }
 
 input[type=checkbox] + label:before { content: "\f10c"; } /* unchecked icon */
-input[type=checkbox] + label:before { letter-spacing: 10px; } /* space between checkbox and label */
+input[type=checkbox] + label:before { letter-spacing: 30px; } /* space between checkbox and label */
 
 input[type=checkbox]:checked + label:before { content: "\f058"; } /* checked icon */
-input[type=checkbox]:checked + label:before { letter-spacing: 10px; } /* allow space for check mark */
+input[type=checkbox]:checked + label:before { letter-spacing: 30px; } /* allow space for check mark */
 
 .page {
    margin: 85px 0;
@@ -143,6 +149,44 @@ p {
    display: none;
 }
 
+.exemption-categories {
+   margin-bottom: 120px;
+}
+
+.exemption-group {
+   margin: 30px 0;
+
+   p {
+      margin-left: 56px;
+   }
+}
+
+.sticky-nav {
+   position: fixed;
+   bottom: 0;
+   text-align: center;
+   padding: 24px;
+   width: 100%;
+   background-color: @white;
+   box-shadow: 0px 0px 20px #888;
+
+   p {
+      color: @red;
+      font-size: 20px;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+   }
+
+   .btn {
+      display: inline;
+      margin-left: 24px;
+      font-size: 18px;
+      i {
+         margin-left: 8px;
+      }
+   }
+}
+
 .action-nav {
    display: block;
    text-align: center;
@@ -182,6 +226,7 @@ p {
    top: 8px;
 }
 
+.exemptions,
 .contact {
    display: none;
 }
