@@ -1,5 +1,6 @@
 <head>
 <title>Tell the Copyright Office You Demand the Right to Repair</title>
+<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400italic,400,300,600,700' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -7,57 +8,90 @@
 
 <template name="layout">
 <div class="container-fluid">
-   <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-         {{> yield}}
-      </div>
-   </div>
+   {{> yield}}
 </div>
 </template>
 
 <template name="home">
-   <h1>Your rights are under attack</h1>
-   <h2>Tell the Copyright Office to fix the DMCA.</h2>
+   <div class="row title">
+      <div class="col-md-8 col-md-offset-2">
+         <img class="logo" src="/logo.png" />
+         <h1>Your rights are under attack</h1>
+         <h2>Tell the Copyright Office to fix the DMCA.</h2>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+         <a href="/exemptions" class="btn btn-default action-nav">Sign this simple form</a>
 
-   <p>They made it illegal to unlock our phones. But we stood up to them, and President Obama agreed with us. Now they're considering taking even that away.</p>
+         <p>They made it illegal to unlock our phones. But we stood up to them, and President Obama agreed with us. Now they're considering taking even that away.</p>
 
-   <p>Copyright law is shaping up to be the next big battleground in technology. It's fundamentally redefining ownership. And there's something you can do about it. Right now.</p>
-   <p>Following on the heels of the phone carrier's defeated campaign to criminalize cell phone unlocking, the Copyright Office is considering opening up a number of additional freedoms.</p>
-   <p>But they'll only grant them (freedoms we should have by default) if we can demonstrate 'overwhelming market need.' That's where you come in.</p>
+         <p>Copyright law is shaping up to be the next big battleground in technology. It's fundamentally redefining ownership. And there's something you can do about it. Right now.</p>
+         <p>Following on the heels of the phone carrier's defeated campaign to criminalize cell phone unlocking, the Copyright Office is considering opening up a number of additional freedoms.</p>
+         <p>But they'll only grant them (freedoms we should have by default) if we can demonstrate 'overwhelming market need.' That's where you come in.</p>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+         <h3 class="callout">Demand back the right to modify, unlock, and repair your things.</h3>
+      </div>
+   </div>
 
-   <a href="/exemptions" class="btn btn-default action-nav">Storm the gates!</a>
+   <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+         <p><em><strong>Wait.</strong> Didn't the Copyright Office already make a comment form?</em></p>
+         <p><a href="http://copyright.gov/1201/comment-forms/">They sure did.</a> You can see it here if you scroll far enough, but it's cumbersome. You have to upload a Word document and they make it espeically difficult comment on more than one exemption.</p>
 
-   <h3>Didn't the Copyright Office already make a comment form?</h3>
-   <p>They sure did. You can <a href="http://copyright.gov/1201/comment-forms/">see it here</a> if you scroll far enough, but it's cumbersome. You have to upload a Word document and they make it espeically difficult comment on more than one exemption.</p>
+         <p>So we made their form better. You're welcome, <a href="http://en.wikipedia.org/wiki/Maria_Pallante">Maria</a>.</p>
 
-   <p>So we made their form better. You're welcome, <a hreef="http://en.wikipedia.org/wiki/Maria_Pallante">Maria</a>.</p>
+         <p>In another awesome turn of events, the Copyright Office is also accepting video submissions! If you want to have an extra special impact, record your comments and burn your video to a DVD. Then and mail it to:</p>
 
-   <p>In another awesome turn of events, the Copyright Office is also accepting video submissions! If you want to have an extra special impact, record your comments and burn your video to a DVD. Then and mail it to:</p>
-   <address>
-      U.S. Copyright Office<br />
-      101 Independence Ave. S.E.<br />
-      Washington, D.C. 20559-6000<br />
-   </address>
+         <address>
+            U.S. Copyright Office<br />
+            101 Independence Ave. S.E.<br />
+            Washington, D.C. 20559-6000<br />
+         </address>
 
-   <p>This work is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/us/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</p>
-   <p>Darkness cannot drive out darkness.</p>
-   <img class="logo" src="http://static1.squarespace.com/static/53821f30e4b07bcdae103594/t/53822049e4b007073a0c4fa5/1418855092200/?format=250w" />
+         <p>This work is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/us/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</p>
+         <p>Darkness cannot drive out darkness.</p>
+
+         <a href="/exemptions" class="btn btn-default action-nav">Tell Them This Sucks</a>
+      </div>
+   </div>
 </template>
 
 <template name="exemptions">
-   <div class="page exemptions">
-      <h1>Proposed Exemptions</h1>
-      <p>What rights do you have a personal stake in?</p>
-      {{> exemptionsForm}}
-      <a href="/contact" class="submit-exemptions btn btn-default action-nav">Restore our freedom</a>
-      <p><em>We will submit a short comment on your behalf for <strong>each</strong> category, so select carefully.</em></p>
+   {{> back}}
+   <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+         <div class="page exemptions">
+            <h1 class="page-title">Proposed Exemptions</h1>
+            <h2 class="sub-title">What rights do you have a personal stake in?</h2>
+            {{> exemptionsCategories}}
+            <a href="/contact" class="submit-exemptions btn btn-default action-nav">Restore our freedom</a>
+            <p><em>We will submit a short comment on your behalf for <strong>each</strong> category, so select carefully.</em></p>
+         </div>
+         {{> exemptionsForm}}
+         {{> contact}}
+      </div>
    </div>
-   {{> contact}}
+</template>
+
+<template name="exemptionsCategories">
+   {{#each exemption_requests}}
+      {{#with exemption}}
+      <div class="exemption-group">
+         <input type="checkbox" id="exemption_{{name}}" value="{{name}}">
+         <label for="exemption_{{name}}">{{name}}</label>
+      </div>
+      {{/with}}
+   {{/each}}
 </template>
 
 <template name="contact">
    <div class="page contact">
-      <h1>Who are you?</h1>
+      <h1 class="page-title">Contact Info</h1>
+      <h2 class="sub-title">Who are you?</h2>
       <p>The Copyright Office wants to know how to contact you in case they need to follow up on your comments. We don't know why they're <a href="http://copyright.gov/1201/comment-forms/">requiring a mailing address</a> for each comment, but they are. And hey&mdash;no one said freedom was free.</p>
       {{> contactForm}}
    </div>
@@ -68,39 +102,43 @@
 </template>
 
 <template name="exemptionsForm">
-<form class="exemptions-form form-horizontal">
-   <fieldset>
-      <div class="form-group">
-         {{#each exemption_requests}}
-         <div class="col-md-12">
-            {{#with exemption}}
-            <div class="exemption-group">
-               <h3>{{name}}</h3>
-               {{#each list}}
-               <section class="accordion-row">
-                  <div class="accordion-container row">
-                     <div class="check-container col-md-1">
-                        <input type="checkbox" value="{{index}}" name="exemption_{{index}}" class="exemption-group-select-all">
+<div class="page exemptions">
+   <h1 class="page-title">Exemption List</h1>
+   <h2 class="sub-title">What part of <strong></strong> are you interested in?</h2>
+   <form class="exemptions-form form-horizontal">
+      <fieldset>
+         <div class="form-group">
+            {{#each exemption_requests}}
+            <div class="col-md-12">
+               {{#with exemption}}
+               <div class="exemption-group">
+                  <h3>{{name}}</h3>
+                  {{#each list}}
+                  <section class="accordion-row">
+                     <div class="accordion-container row">
+                        <div class="check-container col-md-1">
+                           <input type="checkbox" value="{{index}}" name="exemption_{{index}}" class="exemption-group-select-all">
+                        </div>
+                        <div class="accordion-content col-md-11">
+                           <p class="accordion-title">{{title}}</p>
+                           <p class="accordion-subline">{{right}}</p>
+                           <a class="accordion-link" href="{{link}}">source</a>
+                        </div>
                      </div>
-                     <div class="accordion-content col-md-11">
-                        <p class="accordion-title">{{title}}</p>
-                        <p class="accordion-subline">{{right}}</p>
-                        <a class="accordion-link" href="{{link}}">source</a>
+                     <div class="accordion-slide">
+                        <p class="accordion-description">{{description}}</p>
+                        <textarea name="message_{{index}}" class="exemption-content form-control" rows="10"></textarea>
                      </div>
-                  </div>
-                  <div class="accordion-slide">
-                     <p class="accordion-description">{{description}}</p>
-                     <textarea name="message_{{index}}" class="exemption-content form-control" rows="10"></textarea>
-                  </div>
-               </section>
-               {{/each}}
+                  </section>
+                  {{/each}}
+               </div>
+               {{/with}}
             </div>
-            {{/with}}
+            {{/each}}
          </div>
-         {{/each}}
-      </div>
-   </fieldset>
-</form>
+      </fieldset>
+   </form>
+</div>
 </template>
 
 <template name="contactForm">
@@ -120,3 +158,11 @@
 {{/autoForm}}
 </template>
 
+<template name="back">
+   <div class="row back">
+      <div class="col-md-12">
+         <a href="#"><i class="fa fa-long-arrow-left"></i> Back</a>
+         <img class="logo" src="/logo.png" />
+      </div>
+   </div>
+</template>

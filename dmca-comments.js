@@ -204,6 +204,12 @@ if (Meteor.isClient) {
       }
    });
 
+   Template.exemptionsCategories.helpers({
+      exemption_requests: function() {
+         return exemptions;
+      }
+   });
+
    Template.exemptionsForm.helpers({
       checked: function(checked) {
          return checked ? "checked" : "";

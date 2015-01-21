@@ -1,16 +1,140 @@
 @border: #ccc;
+@red: #D0021B;
+@black: #000;
+@white: #fff;
 
 * {
    box-sizing: border-box;
+   font-family: 'Open Sans', Helvetica, sans-serif;
+   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6, p, li, textarea, input {
-   font-family: 'Open Sans', Helvetica, sans-serif;
+h1, h2, h3, h4, h5, h6 {
+   font-family: 'Montserrat', sans-serif;
+}
+
+a {
+   color: @red;
+
+   &:hover {
+      color: darken(@red, 10%);
+   }
+}
+
+strong {
+   font-weight: 600;
+}
+
+.form-control, input, textarea {
+   border: 3px solid @border;
+   border-radius: 0;
+   padding: 12px 17px;
+}
+
+.form-control, input {
+   height: 46px;
+}
+
+.title {
+   background-color: @red;
+   text-align: center;
+   padding: 55px 0;
+
+   h1 {
+      font-size: 48px;
+      color: @black;
+      text-shadow: 0 2px 1px #FF4545;
+   }
+
+   h2 {
+      font-size: 24px;
+      color: @black;
+      text-shadow: 0 2px 1px #FF4545;
+   }
+}
+
+.back {
+   background: @red;
+   height: 62px;
+
+   a {
+      color: @white;
+      padding: 16px;
+      font-size: 18px;
+      text-transform: uppercase;
+      font-family: 'Montserrat', sans-serif;
+      display: inline-block;
+
+      &:hover {
+         text-decoration: none;
+      }
+
+      i {
+         margin-right: 12px;
+      }
+   }
+
+   .logo {
+      margin: -49px auto 0;
+   }
+}
+
+h1.page-title {
+   font-size: 18px;
+   color: @red;
+   text-align: center;
+   text-transform: uppercase;
+}
+
+h2.sub-title {
+   text-align: center;
+   font-size: 26px;
+}
+
+input[type=checkbox] { display:none; } /* to hide the checkbox itself */
+input[type=checkbox] + label:before {
+  font-family: FontAwesome;
+  display: inline-block;
+}
+
+input[type=checkbox] + label:before { content: "\f10c"; } /* unchecked icon */
+input[type=checkbox] + label:before { letter-spacing: 10px; } /* space between checkbox and label */
+
+input[type=checkbox]:checked + label:before { content: "\f058"; } /* checked icon */
+input[type=checkbox]:checked + label:before { letter-spacing: 10px; } /* allow space for check mark */
+
+.page {
+   margin: 85px 0;
+}
+
+.callout {
+   color: @red;
+   font-size: 26px;
+   margin: 48px;
+   text-align: center;
+}
+
+p {
+   font-size: 18px;
+}
+
+.btn {
+   font-size: 18px;
+   text-transform: uppercase;
+   border-radius: 48px; 
+   padding: 11px 22px;
+   background: @black;
+   color: @white;
+
+   &:hover {
+      background: @black;
+      color: @white;
+   }
 }
 
 .logo {
    margin: 0 auto;
-   width: 250px;
+   width: 100px;
    display: block;
 }
 
@@ -28,19 +152,11 @@ h1, h2, h3, h4, h5, h6, p, li, textarea, input {
 
 .accordion-row {
    position: relative;
-   border: 1px solid @border;
    margin: 12px 0;
 }
 
 .accordion-container {
    cursor: pointer;
-}
-
-.check-container {
-   input {
-      margin: 36px 18px;
-      display: block;
-   }
 }
 
 .accordion-title {
