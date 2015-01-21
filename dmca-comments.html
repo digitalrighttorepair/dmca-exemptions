@@ -22,7 +22,7 @@
    </div>
    <div class="row">
       <div class="col-md-6 col-md-offset-3">
-         <a href="/exemptions" class="btn btn-default action-nav">Sign this simple form</a>
+         <a href="/form" class="btn btn-default action-nav">Sign this simple form</a>
 
          <p>They made it illegal to unlock our phones. But we stood up to them, and President Obama agreed with us. Now they're considering taking even that away.</p>
 
@@ -55,22 +55,37 @@
          <p>This work is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/us/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</p>
          <p>Darkness cannot drive out darkness.</p>
 
-         <a href="/exemptions" class="btn btn-default action-nav">Tell Them This Sucks</a>
+         <a href="/form" class="btn btn-default action-nav">Tell Them This Sucks</a>
       </div>
    </div>
 </template>
 
-<template name="exemptions">
+<template name="form">
+   {{> exemptionCategories}}
+   {{> exemptions}}
+   {{> contact}}
+</template>
+
+<template name="exemptionCategories">
+<div class="main exemption-categories">
    {{> back}}
    <div class="row">
       <div class="col-md-6 col-md-offset-3">
-         <div class="page exemption-categories">
+         <div class="page">
             <h1 class="page-title">Proposed Exemptions</h1>
             <h2 class="sub-title">What rights do you have a personal stake in?</h2>
-            {{> exemptionsCategories}}
+            <form class="exemption-categories-form">
+            {{#each exemption_requests}}
+               {{#with exemption}}
+               <div class="exemption-group">
+                  <input type="checkbox" id="exemption_{{short}}" name="exemption_{{short}}" value="{{short}}">
+                  <label for="exemption_{{short}}">{{name}}</label>
+                  <p>{{description}}</p>
+               </div>
+               {{/with}}
+            {{/each}}
+            </form>
          </div>
-         {{> exemptionsForm}}
-         {{> contact}}
       </div>
    </div>
    <div class="row sticky-nav">
@@ -78,66 +93,70 @@
          <p>Select a category, then <a class="exemptions-continue btn btn-default action-nav">Continue <i class="fa fa-arrow-circle-right"></i></a></p>
       </div>
    </div>
+</div>
 </template>
 
-<template name="exemptionsCategories">
-   {{#each exemption_requests}}
-      {{#with exemption}}
-      <div class="exemption-group">
-         <input type="checkbox" id="exemption_{{name}}" value="{{name}}">
-         <label for="exemption_{{name}}">{{name}}</label>
-         <p>{{description}}</p>
+<template name="exemptions">
+<div class="main exemptions">
+   {{> back}}
+   <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+         <div class="page">
+            <h1 class="page-title">Exemption List</h1>
+            <h2 class="sub-title">What part of <strong>{{selected_categories}}</strong> are you interested in?</h2>
+            <form class="exemptions-form form-horizontal">
+               <fieldset>
+                  <div class="form-group">
+                     {{#each exemption_requests}}
+                        {{#with exemption}}
+                           {{#each list}}
+                           <section class="accordion-row">
+                              <div class="accordion-container row">
+                                 <input type="checkbox" value="{{index}}" name="exemption_{{index}}" class="exemption-group-select-all">
+                                 <label for="exemption_{{index}}">{{title}}</label>
+                                 <p class="accordion-subline">{{right}}</p>
+                                 <a class="accordion-link" href="{{link}}">source</a>
+                              </div>
+                              <div class="accordion-slide">
+                                 <p class="accordion-description">{{description}}</p>
+                                 <textarea name="message_{{index}}" class="exemption-content form-control" rows="10"></textarea>
+                              </div>
+                           </section>
+                           {{/each}}
+                        {{/with}}
+                     {{/each}}
+                  </div>
+               </fieldset>
+            </form>
+         </div>
       </div>
-      {{/with}}
-   {{/each}}
+   </div>
+   <div class="row sticky-nav">
+      <div class="col-md-12">
+         <p>Select exemptions, then <a class="submit-exemptions btn btn-default action-nav">Continue <i class="fa fa-arrow-circle-right"></i></a></p>
+      </div>
+   </div>
+</div>
 </template>
 
 <template name="contact">
-   <div class="page contact">
-      <h1 class="page-title">Contact Info</h1>
-      <h2 class="sub-title">Who are you?</h2>
-      <p>The Copyright Office wants to know how to contact you in case they need to follow up on your comments. We don't know why they're <a href="http://copyright.gov/1201/comment-forms/">requiring a mailing address</a> for each comment, but they are. And hey&mdash;no one said freedom was free.</p>
-      {{> contactForm}}
+<div class="main contact">
+   {{> back}}
+   <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+         <div class="page">
+            <h1 class="page-title">Contact Info</h1>
+            <h2 class="sub-title">Who are you?</h2>
+            <p>The Copyright Office wants to know how to contact you in case they need to follow up on your comments. We don't know why they're <a href="http://copyright.gov/1201/comment-forms/">requiring a mailing address</a> for each comment, but they are. And hey&mdash;no one said freedom was free.</p>
+            {{> contactForm}}
+         </div>
+      </div>
    </div>
+</div>
 </template>
 
 <template name="success">
    <h1>Success.</h1>
-</template>
-
-<template name="exemptionsForm">
-<div class="page exemptions">
-   <h1 class="page-title">Exemption List</h1>
-   <h2 class="sub-title">What part of <strong></strong> are you interested in?</h2>
-   <form class="exemptions-form form-horizontal">
-      <fieldset>
-         <div class="form-group">
-            {{#each exemption_requests}}
-               {{#with exemption}}
-                  {{#each list}}
-                  <section class="accordion-row">
-                     <div class="accordion-container row">
-                        <div class="check-container col-md-1">
-                           <input type="checkbox" value="{{index}}" name="exemption_{{index}}" class="exemption-group-select-all">
-                        </div>
-                        <div class="accordion-content col-md-11">
-                           <p class="accordion-title">{{title}}</p>
-                           <p class="accordion-subline">{{right}}</p>
-                           <a class="accordion-link" href="{{link}}">source</a>
-                        </div>
-                     </div>
-                     <div class="accordion-slide">
-                        <p class="accordion-description">{{description}}</p>
-                        <textarea name="message_{{index}}" class="exemption-content form-control" rows="10"></textarea>
-                     </div>
-                  </section>
-                  {{/each}}
-               {{/with}}
-            {{/each}}
-         </div>
-      </fieldset>
-   </form>
-</div>
 </template>
 
 <template name="contactForm">
