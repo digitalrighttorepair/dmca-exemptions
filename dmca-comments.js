@@ -214,14 +214,16 @@ if (Meteor.isClient) {
    Template.back.events({
       'click .back': function(ev) {
          ev.preventDefault();
-         var container = $(ev.target).parent('.main')
+         var container = $(ev.target).parents('.main')
          if (container.hasClass('contact')) {
             $('.contact').hide(); 
             $('.exemptions').show();
          } else if (container.hasClass('exemptions')) {
             $('.exemptions').hide(); 
             $('.exemption-categories').show();
-         } 
+         } else {
+            window.history.back();
+         }
       }
    });
 
@@ -232,7 +234,6 @@ if (Meteor.isClient) {
          var categories = _.object(_.filter(exemptionsForm.serializeArray(), function(value) { return value !== ""; }).map(function(el) { return [el.name, el.value]; }));
 
          Session.set('exemptionCategories', categories);
-         console.log(categories);
 
          $('.exemption-categories').hide();
          $('.exemptions').show();
@@ -259,14 +260,11 @@ if (Meteor.isClient) {
             });
          });
 
-         console.log(requests);
-
          return requests;
       },
 
       selected_categories: function() {
          var categories = Session.get('exemptionCategories');
-         console.log(categories);
          return _.values(categories).join(', ');
       }
    });
