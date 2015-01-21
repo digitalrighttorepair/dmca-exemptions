@@ -229,6 +229,8 @@ if (Meteor.isClient) {
          } else if (container.hasClass('letter')) {
             $('.letter').hide(); 
             $('.exemptions').show();
+         } else if (container.hasClass('success')) {
+            window.location = '/';
          } else {
             window.history.back();
          }

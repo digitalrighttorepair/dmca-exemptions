@@ -9,7 +9,7 @@
    -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6, label {
+.action-nav, h1, h2, h3, h4, h5, h6, label {
    font-family: 'Montserrat', sans-serif;
 }
 
@@ -53,11 +53,15 @@ strong {
    }
 }
 
+.button-container {
+   text-align: center;
+}
+
 .back {
    background: @red;
    height: 62px;
 
-   a {
+   a.back-button {
       color: @white;
       padding: 16px;
       font-size: 18px;
@@ -137,6 +141,12 @@ p {
       background: @black;
       color: @white;
    }
+
+   &.transparent {
+      border: 2px solid @red;
+      color: @red;
+      background: transparent;
+   }
 }
 
 .logo {
@@ -189,10 +199,13 @@ p {
 }
 
 .action-nav {
-   display: block;
    text-align: center;
-   font-size: 30px;
+   font-size: 18px;
    margin: 36px 0;
+
+   &.top-action {
+      margin-top: -25px;
+   }
 }
 
 .accordion-row {

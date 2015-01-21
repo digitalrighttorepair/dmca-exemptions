@@ -15,14 +15,16 @@
 <template name="home">
    <div class="row title">
       <div class="col-md-8 col-md-offset-2">
-         <img class="logo" src="/logo.png" />
+         <a href="/"><img class="logo" src="/logo.png" /></a>
          <h1>Your rights are under attack</h1>
          <h2>Tell the Copyright Office to fix the DMCA.</h2>
       </div>
    </div>
    <div class="row">
       <div class="col-md-6 col-md-offset-3">
-         <a href="/form" class="btn btn-default action-nav">Sign this simple form</a>
+         <div class="button-container">
+            <a href="/form" class="btn action-nav top-action">Sign this simple form</a>
+         </div>
 
          <p>They made it illegal to unlock our phones. But we stood up to them, and President Obama agreed with us. Now they're considering taking even that away.</p>
 
@@ -55,7 +57,9 @@
          <p>This work is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/us/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</p>
          <p>Darkness cannot drive out darkness.</p>
 
-         <a href="/form" class="btn btn-default action-nav">Tell Them This Sucks</a>
+         <div class="button-container">
+            <a href="/form" class="btn action-nav transparent">Tell Them This Sucks</a>
+         </div>
       </div>
    </div>
 </template>
@@ -92,7 +96,7 @@
    </div>
    <div class="row sticky-nav">
       <div class="col-md-12">
-         <p>Select a category, then <a class="exemptions-continue btn btn-default action-nav">Continue <i class="fa fa-arrow-circle-right"></i></a></p>
+         <p>Select a category, then <a class="exemptions-continue btn action-nav">Continue <i class="fa fa-arrow-circle-right"></i></a></p>
       </div>
    </div>
 </div>
@@ -132,7 +136,7 @@
    </div>
    <div class="row sticky-nav">
       <div class="col-md-12">
-         <p>Select exemptions, then <a class="submit-exemptions btn btn-default action-nav">Continue <i class="fa fa-arrow-circle-right"></i></a></p>
+         <p>Select exemptions, then <a class="submit-exemptions btn action-nav">Continue <i class="fa fa-arrow-circle-right"></i></a></p>
       </div>
    </div>
 </div>
@@ -148,7 +152,9 @@
             <h2 class="sub-title">Tell them a little more about how you feel.</h2>
             <form class="letter-form">
                <textarea rows="20" class="letter-input form-control"></textarea>
-               <a class="letter-submit btn action-nav">Enter Contact Info <i class="fa fa-arrow-circle-right"></i></a>
+               <div class="button-container">
+                  <a class="letter-submit btn action-nav">Enter Contact Info <i class="fa fa-arrow-circle-right"></i></a>
+               </div>
             </form>
          </div>
       </div>
@@ -198,7 +204,9 @@
   {{> afQuickField name='postalcode'}}
   {{> afQuickField name='phone'}}
 
-  <button type="submit" class="btn action-nav btn-primary">Submit</button>
+  <div class="button-container">
+     <button type="submit" class="btn action-nav">Submit</button>
+   </div>
 
 {{/autoForm}}
 </template>
@@ -206,8 +214,8 @@
 <template name="back">
    <div class="row back">
       <div class="col-md-12">
-         <a href="#"><i class="fa fa-long-arrow-left"></i> Back</a>
-         <img class="logo" src="/logo.png" />
+         <a href="#" class="back-button"><i class="fa fa-long-arrow-left"></i> Back</a>
+         <a href="/"><img class="logo" src="/logo.png" /></a>
       </div>
    </div>
 </template>
