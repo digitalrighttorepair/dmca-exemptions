@@ -130,11 +130,11 @@
                         <div class="accordion-container">
                            <input type="checkbox" value="{{index}}" name="exemption_{{index}}" class="exemption-checkbox">
                            <label for="exemption_{{index}}">{{right}}</label>
-                           <a class="accordion-link" href="{{source}}">formal exemption request</a>
+                           <p class="links">Formal exemption requests: {{#each sources source}}<a class="accordion-link" href="{{this}}">link</a>{{/each}}</p>
+                           <p class="accordion-description">Freedom under consideration: &ldquo;{{description}}&rdquo;</p>
                         </div>
                         <div class="accordion-slide">
-                           <p class="accordion-description">Freedom under consideration: &ldquo;{{description}}&rdquo;</p>
-			   <p>Tell the Copyright Office why this would make a difference to you.</p>
+                           <p class="exemption-label">Tell the Copyright Office why this would make a difference to you.</p>
                            <textarea name="message_{{index}}" id="exemption_{{index}}_message" class="exemption-content form-control" rows="10">{{example}}</textarea>
                         </div>
                      </section>

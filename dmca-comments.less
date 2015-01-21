@@ -9,6 +9,7 @@
    -webkit-font-smoothing: antialiased;
 }
 
+.exemption-labe,
 .action-nav, h1, h2, h3, h4, h5, h6, label {
    font-family: 'Montserrat', sans-serif;
 }
@@ -137,6 +138,7 @@ p {
    background: @black;
    color: @white;
 
+   &:active,
    &:hover {
       background: @black;
       color: @white;
@@ -242,24 +244,33 @@ p {
    font-weight: bold;
 }
 
-.accordion-subline {
-   font-style: italic;
+.accordion-description {
    margin-left: 56px;
+}
+
+.exemption-label {
+   color: @red;
+   font-size: 16px;
+   text-transform: uppercase;
+   margin-bottom: 4px;
+   font-weight: bold;
 }
 
 .accordion-slide {
    display: none;
-   padding: 6px 12px;
+   margin-left: 56px;
 
    textarea {
       width: 100%;
    }
 }
 
+.links {
+   margin-left: 56px;
+}
+
 .accordion-link {
-   position: absolute;
-   right: 30px;
-   top: 8px;
+   margin-left: 6px;
 }
 
 .letter,

@@ -170,6 +170,12 @@ Router.configure({
    layoutTemplate: 'layout'
 });
 
+var topOfPage = function() {
+   $('html, body').animate({
+      scrollTop: $('body').offset().top
+   }, 1000);
+};
+
 if (Meteor.isClient) {
    Session.set('selectedExemptions', []);
 
@@ -234,6 +240,7 @@ if (Meteor.isClient) {
          } else {
             window.history.back();
          }
+         topOfPage();
       }
    });
 
@@ -273,10 +280,14 @@ if (Meteor.isClient) {
 
          $('.exemption-categories').hide();
          $('.exemptions').show();
+         topOfPage();
       }
    });
 
    Template.exemptions.helpers({
+      sources: function(sources) {
+         return sources.split(", ");
+      },
       checked: function(checked) {
          return checked ? "checked" : "";
       },
@@ -366,6 +377,7 @@ if (Meteor.isClient) {
 
          $('.exemptions').hide();
          $('.letter').show();
+         topOfPage();
       },
       'click .accordion-row': function(ev) {
          var target = $(ev.target);
@@ -391,6 +403,7 @@ if (Meteor.isClient) {
       'click .letter-submit': function(ev) {
          $('.letter').hide();
          $('.contact').show();
+         topOfPage();
       }
    });
 
