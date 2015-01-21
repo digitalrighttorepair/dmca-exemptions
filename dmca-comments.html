@@ -23,26 +23,25 @@
    <div class="row">
       <div class="col-md-6 col-md-offset-3">
          <div class="button-container">
-            <a href="/form" class="btn action-nav top-action">Sign this simple form</a>
+            <a href="/form" class="btn action-nav top-action">Storm the Gates</a>
          </div>
 
-         <p>They made it illegal to unlock our phones. But we stood up to them, and President Obama agreed with us. Now they're considering taking even that away.</p>
+         <p>In 2012, they made it illegal to unlock our own phones. But we stood up to them, and President Obama agreed with us. We got a law passed. Now the Copyright Office is considering taking that freedom away again.</p>
 
-         <p>Copyright law is shaping up to be the next big battleground in technology. It's fundamentally redefining ownership. And there's something you can do about it. Right now.</p>
-         <p>Following on the heels of the phone carrier's defeated campaign to criminalize cell phone unlocking, the Copyright Office is considering opening up a number of additional freedoms.</p>
-         <p>But they'll only grant them (freedoms we should have by default) if we can demonstrate 'overwhelming market need.' That's where you come in.</p>
+         <p>Copyright law is shaping up to be the next big battleground in technology. It's fundamentally redefining ownership. But there's something you can do about it. <strong>Right now.</strong></p>
+         <p>The Copyright Office is reviewing the DMCA. But we have to demonstrate an 'overwhelming market need.' That's where you come in: Let's show them what thousands of people demanding reform looks like.</p>
       </div>
    </div>
    <div class="row">
       <div class="col-md-10 col-md-offset-1">
-         <h3 class="callout">Demand back the right to modify, unlock, and repair your things.</h3>
+         <h3 class="callout">Demand the right to modify, unlock, and repair your things.</h3>
       </div>
    </div>
 
    <div class="row">
       <div class="col-md-6 col-md-offset-3">
          <p><em><strong>Wait.</strong> Didn't the Copyright Office already make a comment form?</em></p>
-         <p><a href="http://copyright.gov/1201/comment-forms/">They sure did.</a> You can see it here if you scroll far enough, but it's cumbersome. You have to upload a Word document and they make it espeically difficult comment on more than one exemption.</p>
+         <p><a href="http://copyright.gov/1201/comment-forms/">They sure did,</a> but it's almost impossible to use. You can see the <a href="http://copyright.gov/1201/comment-forms/">cumbersome form here</a> if you scroll far enough. You have to upload a Word document and they make it especially difficult comment on more than one exemption.</p>
 
          <p>So we made their form better. You're welcome, <a href="http://en.wikipedia.org/wiki/Maria_Pallante">Maria</a>.</p>
 
@@ -54,14 +53,26 @@
             Washington, D.C. 20559-6000<br />
          </address>
 
-         <p>This work is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/us/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</p>
-         <p>Darkness cannot drive out darkness.</p>
 
          <div class="button-container">
-            <a href="/form" class="btn action-nav transparent">Tell Them This Sucks</a>
+            <a href="/form" class="btn action-nav transparent">Make Your Voice Heard</a>
          </div>
       </div>
    </div>
+
+   <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+         <h3 class="callout">Brought to you by</h3>
+
+      </div>
+   </div>
+
+   <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+         <p>This work is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/us/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>. Grab the source from Github. Handcrafted in San Luis Obispo by Tim Asp and Kyle Wiens.</p>
+      </div>
+   </div>
+
 </template>
 
 <template name="form">
@@ -78,7 +89,7 @@
       <div class="col-md-6 col-md-offset-3">
          <div class="page">
             <h1 class="page-title">Proposed Exemptions</h1>
-            <h2 class="sub-title">What rights do you have a personal stake in?</h2>
+            <h2 class="sub-title">Make your stand. What rights do you want to defend?</h2>
             <form class="exemption-categories-form">
                <p class="error-message hidden">You must select at least one category</p>
                {{#each exemption_requests}}
@@ -118,12 +129,12 @@
                      <section class="accordion-row">
                         <div class="accordion-container">
                            <input type="checkbox" value="{{index}}" name="exemption_{{index}}" class="exemption-checkbox">
-                           <label for="exemption_{{index}}">{{title}}</label>
-                           <p class="accordion-subline">{{right}}</p>
-                           <a class="accordion-link" href="{{source}}">source</a>
+                           <label for="exemption_{{index}}">{{right}}</label>
+                           <a class="accordion-link" href="{{source}}">formal exemption request</a>
                         </div>
                         <div class="accordion-slide">
-                           <p class="accordion-description">{{description}}</p>
+                           <p class="accordion-description">Freedom under consideration: &ldquo;{{description}}&rdquo;</p>
+			   <p>Tell the Copyright Office why this would make a difference to you.</p>
                            <textarea name="message_{{index}}" id="exemption_{{index}}_message" class="exemption-content form-control" rows="10">{{example}}</textarea>
                         </div>
                      </section>
