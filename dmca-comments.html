@@ -107,6 +107,7 @@
             <h1 class="page-title">Exemption List</h1>
             <h2 class="sub-title">What part of <strong>{{selected_categories}}</strong> are you interested in?</h2>
             <form class="exemptions-form">
+               <p class="error-message hidden">You must select at least one exemption</p>
                {{#each exemption_requests}}
                   {{#with exemption}}
                      {{#each list}}
@@ -172,12 +173,22 @@
 </template>
 
 <template name="success">
-   <h1>Success.</h1>
+<div class="main">
+   {{> back}}
+   <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+         <div class="page">
+            <h1 class="success">Thank You!</h1>
+         </div>
+      </div>
+   </div>
+</div>
 </template>
 
 <template name="contactForm">
 {{#autoForm collection=Collections.Contact id="contactForm" type="insert"}}
   <span class="hidden">{{> afQuickField name='exemptionsid'}}</span>
+  <span class="hidden">{{> afQuickField name='letter'}}</span>
   {{> afQuickField name='email'}}
   {{> afQuickField name='name'}}
   {{> afQuickField name='address1'}}

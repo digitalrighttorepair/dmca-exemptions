@@ -139,6 +139,10 @@ Schemas.Contact = new SimpleSchema({
       label: 'Phone',
       max: 55
    },
+   letter: {
+      type: String,
+      optional: true
+   },
    exemptionsid: {
       type: String,
       optional: true
@@ -186,6 +190,7 @@ if (Meteor.isClient) {
                var selectedExemptions = Session.get("selectedExemptions");
                var exemptionsid = Collections.Exemptions.insert(selectedExemptions);
                doc.exemptionsid = exemptionsid;
+               doc.letter = $('.letter-input').val();
                return doc;
             }
          },
@@ -288,6 +293,15 @@ if (Meteor.isClient) {
    });
 
    Template.exemptions.events({
+      'click .exemption-checkbox': function(ev) {
+         var message = $('.exemptions-form').find('.error-message');
+         console.log('message');
+         if ($(ev.target).is(':checked')) {
+            message.addClass('hidden');
+         } else {
+            message.removeClass('hidden');
+         }
+      },
       'focus .exemption-content, keydown .exemption-content': function(ev) {
          var target = $(ev.target);
          if (target.parent().hasClass('has-error') && target.val().trim() !== '') {
@@ -301,13 +315,23 @@ if (Meteor.isClient) {
          var values = _.object(_.filter(form.serializeArray(), function(value) { return value !== ""; }).map(function(el) { return [el.name, el.value]; }));
          var selected = [];
          var hasErrors = false;
+         var hasChecked = false;
 
          _.each(values, function(value, key) {
             if (key.indexOf("exemption") == 0) {
+               hasChecked = true;
                var obj = {"exemption": value, "message": values["message_" + value.toString()]};
                selected.push(obj);
             }
          });
+
+         if (!hasChecked) {
+            form.find('.error-message').removeClass('hidden');
+            $('html, body').animate({
+               scrollTop: exemptionsForm.offset().top
+            }, 1000);
+            return;
+         }
 
          // Make sure each selected exemption contains text.
          _.each(selected, function(value, key) {
