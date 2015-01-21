@@ -237,6 +237,16 @@ if (Meteor.isClient) {
       }
    });
 
+   Template.success.helpers({
+      twitterStatus: function() {
+         return encodeURIComponent("I just told the copyright office to get off my lawn. #fixthedmca");
+      },
+      facebookTitle: function() {
+         return encodeURIComponent("I just told the copyright office to get off my lawn. #fixthedmca");
+      }
+   });
+
+
    Template.exemptionCategories.events({
       'click .exemption-category-checkbox': function(ev) {
          var message = $('.exemption-categories-form').find('.error-message');
