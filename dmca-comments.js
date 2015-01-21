@@ -173,7 +173,7 @@ Router.configure({
 var topOfPage = function() {
    $('html, body').animate({
       scrollTop: $('body').offset().top
-   }, 1000);
+   }, 200);
 };
 
 if (Meteor.isClient) {
