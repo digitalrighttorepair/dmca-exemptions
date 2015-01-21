@@ -63,6 +63,7 @@
 <template name="form">
    {{> exemptionCategories}}
    {{> exemptions}}
+   {{> letter}}
    {{> contact}}
 </template>
 
@@ -75,15 +76,16 @@
             <h1 class="page-title">Proposed Exemptions</h1>
             <h2 class="sub-title">What rights do you have a personal stake in?</h2>
             <form class="exemption-categories-form">
-            {{#each exemption_requests}}
-               {{#with exemption}}
-               <div class="exemption-group">
-                  <input type="checkbox" id="exemption_{{short}}" name="exemption_{{short}}" value="{{short}}">
-                  <label for="exemption_{{short}}">{{name}}</label>
-                  <p>{{description}}</p>
-               </div>
-               {{/with}}
-            {{/each}}
+               <p class="error-message hidden">You must select at least one category</p>
+               {{#each exemption_requests}}
+                  {{#with exemption}}
+                  <div class="exemption-group">
+                     <input type="checkbox" id="exemption_{{short}}" name="exemption_{{short}}" value="{{short}}" class="exemption-category-checkbox">
+                     <label for="exemption_{{short}}">{{name}}</label>
+                     <p>{{description}}</p>
+                  </div>
+                  {{/with}}
+               {{/each}}
             </form>
          </div>
       </div>
@@ -104,29 +106,25 @@
          <div class="page">
             <h1 class="page-title">Exemption List</h1>
             <h2 class="sub-title">What part of <strong>{{selected_categories}}</strong> are you interested in?</h2>
-            <form class="exemptions-form form-horizontal">
-               <fieldset>
-                  <div class="form-group">
-                     {{#each exemption_requests}}
-                        {{#with exemption}}
-                           {{#each list}}
-                           <section class="accordion-row">
-                              <div class="accordion-container row">
-                                 <input type="checkbox" value="{{index}}" name="exemption_{{index}}" class="exemption-group-select-all">
-                                 <label for="exemption_{{index}}">{{title}}</label>
-                                 <p class="accordion-subline">{{right}}</p>
-                                 <a class="accordion-link" href="{{link}}">source</a>
-                              </div>
-                              <div class="accordion-slide">
-                                 <p class="accordion-description">{{description}}</p>
-                                 <textarea name="message_{{index}}" class="exemption-content form-control" rows="10"></textarea>
-                              </div>
-                           </section>
-                           {{/each}}
-                        {{/with}}
+            <form class="exemptions-form">
+               {{#each exemption_requests}}
+                  {{#with exemption}}
+                     {{#each list}}
+                     <section class="accordion-row">
+                        <div class="accordion-container">
+                           <input type="checkbox" value="{{index}}" name="exemption_{{index}}" class="exemption-checkbox">
+                           <label for="exemption_{{index}}">{{title}}</label>
+                           <p class="accordion-subline">{{right}}</p>
+                           <a class="accordion-link" href="{{link}}">source</a>
+                        </div>
+                        <div class="accordion-slide">
+                           <p class="accordion-description">{{description}}</p>
+                           <textarea name="message_{{index}}" id="exemption_{{index}}_message" class="exemption-content form-control" rows="10">{{example}}</textarea>
+                        </div>
+                     </section>
                      {{/each}}
-                  </div>
-               </fieldset>
+                  {{/with}}
+               {{/each}}
             </form>
          </div>
       </div>
@@ -134,6 +132,24 @@
    <div class="row sticky-nav">
       <div class="col-md-12">
          <p>Select exemptions, then <a class="submit-exemptions btn btn-default action-nav">Continue <i class="fa fa-arrow-circle-right"></i></a></p>
+      </div>
+   </div>
+</div>
+</template>
+
+<template name="letter">
+<div class="main letter">
+   {{> back}}
+   <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+         <div class="page">
+            <h1 class="page-title">Letter</h1>
+            <h2 class="sub-title">Tell them a little more about how you feel.</h2>
+            <form class="letter-form">
+               <textarea rows="20" class="letter-input form-control"></textarea>
+               <a class="letter-submit btn action-nav">Enter Contact Info <i class="fa fa-arrow-circle-right"></i></a>
+            </form>
+         </div>
       </div>
    </div>
 </div>

@@ -217,10 +217,13 @@ if (Meteor.isClient) {
          var container = $(ev.target).parents('.main')
          if (container.hasClass('contact')) {
             $('.contact').hide(); 
-            $('.exemptions').show();
+            $('.letter').show();
          } else if (container.hasClass('exemptions')) {
             $('.exemptions').hide(); 
             $('.exemption-categories').show();
+         } else if (container.hasClass('letter')) {
+            $('.letter').hide(); 
+            $('.exemptions').show();
          } else {
             window.history.back();
          }
@@ -228,10 +231,26 @@ if (Meteor.isClient) {
    });
 
    Template.exemptionCategories.events({
+      'click .exemption-category-checkbox': function(ev) {
+         var message = $('.exemption-categories-form').find('.error-message');
+         if ($(ev.target).is(':checked')) {
+            message.addClass('hidden');
+         } else {
+            message.removeClass('hidden');
+         }
+      },
       'click .exemptions-continue': function(ev) {
          ev.preventDefault();
          var exemptionsForm = $('.exemption-categories-form');
          var categories = _.object(_.filter(exemptionsForm.serializeArray(), function(value) { return value !== ""; }).map(function(el) { return [el.name, el.value]; }));
+
+         if ($.isEmptyObject(categories)) {
+            exemptionsForm.find('.error-message').removeClass('hidden');
+            $('html, body').animate({
+               scrollTop: exemptionsForm.offset().top
+            }, 1000);
+            return;
+         }
 
          Session.set('exemptionCategories', categories);
 
@@ -250,10 +269,9 @@ if (Meteor.isClient) {
          var shorts = _.values(categories);
          var requests = [];
 
+         // grab exemption categories that are selected and their short names
          _.each(exemptions, function(el, index, list) {
             _.each(shorts, function(short) {
-               console.log(short);
-               console.log(el);
                if (el.exemption.short === short) {
                   requests.push(el);
                }
@@ -270,12 +288,20 @@ if (Meteor.isClient) {
    });
 
    Template.exemptions.events({
+      'focus .exemption-content, keydown .exemption-content': function(ev) {
+         var target = $(ev.target);
+         if (target.parent().hasClass('has-error') && target.val().trim() !== '') {
+            target.parent().removeClass('has-error');
+            target.next().remove();
+         }
+      },
       'click .submit-exemptions': function(ev) {
          ev.preventDefault();
          var form = $('.exemptions-form');
          var values = _.object(_.filter(form.serializeArray(), function(value) { return value !== ""; }).map(function(el) { return [el.name, el.value]; }));
-
          var selected = [];
+         var hasErrors = false;
+
          _.each(values, function(value, key) {
             if (key.indexOf("exemption") == 0) {
                var obj = {"exemption": value, "message": values["message_" + value.toString()]};
@@ -283,10 +309,27 @@ if (Meteor.isClient) {
             }
          });
 
+         // Make sure each selected exemption contains text.
+         _.each(selected, function(value, key) {
+            if (value.message.trim() === '') {
+               var required_field = $('#exemption_' + value.exemption + '_message');
+               $('html, body').animate({
+                  scrollTop: required_field.offset().top
+               }, 1000);
+               required_field.parent().addClass('has-error');
+               required_field.parent().append('<p class="error-message">Message is required</p>');
+               hasErrors = true;
+            }
+         });
+
+         if (hasErrors) {
+            return;
+         }
+
          Session.set('selectedExemptions', selected);
 
          $('.exemptions').hide();
-         $('.contact').show();
+         $('.letter').show();
       },
       'click .accordion-row': function(ev) {
          var target = $(ev.target);
@@ -305,6 +348,13 @@ if (Meteor.isClient) {
          } else {
             slide.slideUp(400); 
          }
+      }
+   });
+
+   Template.letter.events({
+      'click .letter-submit': function(ev) {
+         $('.letter').hide();
+         $('.contact').show();
       }
    });
 
