@@ -3,12 +3,8 @@
 @black: #000;
 @white: #fff;
 
-@mobileTablet: ~"only screen and (max-width: 1000px)";
 @mobile:       ~"only screen and (max-width: 599px)";
-@tablet:       ~"only screen and (min-width: 600px) and (max-width: 1000px)";
-@tabletPortrait: ~"only screen and (min-width: 600px) and (max-width: 728px)";
-@desktop:      ~"only screen and (min-width: 1001px) and (max-width: 1200px)";
-@desktop-xl:   ~"only screen and (min-width: 1200px)";
+@iframesize:       ~"only screen and (max-width: 800px)";
 
 * {
    box-sizing: border-box;
@@ -75,6 +71,13 @@ strong {
    padding-top: 35px;
    height: 0;
    overflow: hidden;
+   width: 800px;
+   margin: 0 auto;
+
+   @media @iframesize {
+      width: auto;
+      margin: 0;
+   }
    
    iframe {
       position: absolute;
@@ -151,7 +154,7 @@ input[type=checkbox]:checked + label:before { letter-spacing: 30px; } /* allow s
    margin: 85px 0;
 
    @media @mobile {
-      margin: 85px 0 130px;
+      margin: 45px 0 130px;
    }
 }
 
