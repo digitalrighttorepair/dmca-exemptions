@@ -64,12 +64,20 @@
       <div class="col-md-10 col-md-offset-1">
          <h3 class="callout">Brought to you by</h3>
 
+         <ul class="logos horizontal">
+            <li><a href="https://ifixit.com"><img src="/ifixit.png" title="EFF" /></a></li>
+            <li><a href="https://eff.org"><img src="/eff.jpg" title="EFF" /></a></li>
+            <li><a href="https://fixthedmca.org"><img src="/fixthedmca.png" title="EFF" /></a></li>
+            <li><a href="https://www.publicknowledge.org/"><img src="/public_knowledge.jpg" title="EFF" /></a></li>
+            <li><a href="https://digitalrighttorepair.org"><img src="/righttorepair.png" title="EFF" /></a></li>
+         </ul>
       </div>
    </div>
 
-   <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-         <p>This work is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/us/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>. Grab the source from Github. Handcrafted in San Luis Obispo by Tim Asp and Kyle Wiens.</p>
+   <div class="row footer">
+      <div class="col-md-10 col-md-offset-1">
+         <p>This work is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/us/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>. Grab the source from Github.</p>
+         <p>Handcrafted in San Luis Obispo by <a href="https://www.linkedin.com/pub/tim-asp/20/558/581/">Tim Asp</a> and <a href="https://ifixit.com">Kyle Wiens</a>. Designed by <a href="http://tonygines.com">Tony Gines.</a></p>
       </div>
    </div>
 
@@ -130,7 +138,7 @@
                         <div class="accordion-container">
                            <input type="checkbox" value="{{index}}" name="exemption_{{index}}" class="exemption-checkbox">
                            <label for="exemption_{{index}}">{{right}}</label>
-                           <p class="links">Formal exemption requests: {{#each sources source}}<a class="accordion-link" href="{{this}}">link</a>{{/each}}</p>
+                           <p class="links">Formal exemption requests: {{#each sources source}}<a class="accordion-link" href="{{value}}">({{index}})</a> {{/each}}</p>
                            <p class="accordion-description">Freedom under consideration: &ldquo;{{description}}&rdquo;</p>
                         </div>
                         <div class="accordion-slide">

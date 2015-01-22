@@ -289,3 +289,32 @@ p {
    text-transform: uppercase;
    text-align: center;
 }
+
+.footer {
+   text-align: center;
+   margin: 48px 0;
+}
+
+.logos {
+   list-style-type: none;
+   margin: 48px auto;
+   padding: 0;
+   overflow: hidden;
+   width: 946px;
+
+   li {
+      display: inline-block;
+      float: left;
+      margin: 0 24px;
+      &:first-of-type {
+         margin-left: 0;
+      }
+      &:last-of-type {
+         margin-right: 0;
+      }
+   }
+
+   img {
+      max-width: 150px;
+   }
+}
