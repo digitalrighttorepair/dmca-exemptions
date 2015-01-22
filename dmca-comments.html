@@ -1,5 +1,6 @@
 <head>
 <title>Tell the Copyright Office You Demand the Right to Repair</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400italic,400,300,600,700' rel='stylesheet' type='text/css'>
 </head>
 
@@ -34,15 +35,15 @@
    </div>
 
    <div class="row">
-         <div class="button-container">
-            <a href="/form" class="btn action-nav transparent">Share Your Story <i class="glyphicon glyphicon-chevron-right"></i></a>
-         </div>
+      <div class="button-container">
+         <a href="/form" class="btn action-nav transparent">Share Your Story <i class="glyphicon glyphicon-chevron-right"></i></a>
+      </div>
    </div>
 
    <div class="row">
-         <div class="button-container">
-            <iframe width="800" height="503" src="//stacks.newsbound.com/explainers/fix_dmca/app/" name="nb-stack" class="newsbound-embedded" frameborder="0" scrolling="no" allowfullscreen></iframe>
-         </div>
+      <div class="iframe-container">
+         <iframe width="800" height="503" src="//stacks.newsbound.com/explainers/fix_dmca/app/" name="nb-stack" class="newsbound-embedded" frameborder="0" scrolling="no" allowfullscreen></iframe>
+      </div>
    </div>
 
    <div class="row">
@@ -150,9 +151,9 @@
                            <input type="checkbox" value="{{index}}" name="exemption_{{index}}" class="exemption-checkbox">
                            <label for="exemption_{{index}}">{{right}}</label>
                            <p class="links">Formal exemption requests: {{#each sources source}}<a class="accordion-link" href="{{value}}">({{index}})</a> {{/each}}</p>
-                           <p class="accordion-description">Freedom under consideration: &ldquo;{{description}}&rdquo;</p>
                         </div>
                         <div class="accordion-slide">
+                           <p class="accordion-description">Freedom under consideration: &ldquo;{{description}}&rdquo;</p>
                            <p class="exemption-label">Tell the Copyright Office why this would make a difference to you.</p>
                            <textarea name="message_{{index}}" id="exemption_{{index}}_message" class="exemption-content form-control" rows="10">{{example}}</textarea>
                         </div>
@@ -180,7 +181,7 @@
          <div class="page">
             <h1 class="page-title">Conclusion</h1>
             <h2 class="sub-title">Almost done. Anything else you want to add?</h2>
-	    <p>We'll send them your comments on each topic separately, but include the same conclusion with each submission.</p>
+            <p>We'll send them your comments on each topic separately, but include the same conclusion with each submission.</p>
             <form class="letter-form">
                <textarea rows="20" class="letter-input form-control">Copyright was designed to encourage creativity and fuel innovation. But it's being abused to do exactly the opposite. Every single day, copyright law is twisted to stifle creativity, limit consumer choice, dismantle property rights, and chip away at our digital freedoms. I should have the right to remix, modify, and repair the things that I own. As electronics are integrated into every kind of product, please consider the needs of consumers as well as rights holders.
 
