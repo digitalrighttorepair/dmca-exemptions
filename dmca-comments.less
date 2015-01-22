@@ -66,25 +66,25 @@ strong {
 }
 
 .iframe-container {
-   position: relative;
-   padding-bottom: 62.875%;
-   padding-top: 35px;
-   height: 0;
-   overflow: hidden;
    width: 800px;
    margin: 0 auto;
 
    @media @iframesize {
+      position: relative;
+      padding-bottom: 62.875%;
+      padding-top: 35px;
+      height: 0;
+      overflow: hidden;
       width: auto;
       margin: 0;
-   }
-   
-   iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+
+      iframe {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+      }
    }
 }
 
