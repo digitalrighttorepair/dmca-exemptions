@@ -137,6 +137,10 @@ Schemas.Contact = new SimpleSchema({
       type: String,
       optional: true
    },
+   newsletter: {
+      type: Boolean,
+      optional: true,
+   },
    exemptionsid: {
       type: String,
       optional: true
@@ -190,6 +194,7 @@ if (Meteor.isClient) {
                var selectedExemptions = Session.get("selectedExemptions");
                var exemptionsid = Collections.Exemptions.insert(selectedExemptions);
                doc.exemptionsid = exemptionsid;
+               doc.newsletter = $('#newsletter_checkbox').is(":checked");
                doc.letter = $('.letter-input').val();
                return doc;
             }

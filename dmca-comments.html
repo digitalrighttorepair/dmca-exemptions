@@ -239,6 +239,7 @@ Thank you for your consideration.</textarea>
 {{#autoForm collection=Collections.Contact id="contactForm" type="insert"}}
   <span class="hidden">{{> afQuickField name='exemptionsid'}}</span>
   <span class="hidden">{{> afQuickField name='letter'}}</span>
+  <span class="hidden">{{> afQuickField name='newsletter'}}</span>
   {{> afQuickField name='email'}}
   {{> afQuickField name='name'}}
   {{> afQuickField name='address1'}}
@@ -247,6 +248,9 @@ Thank you for your consideration.</textarea>
   {{> afQuickField name='state'}}
   {{> afQuickField name='postalcode'}}
   {{> afQuickField name='phone'}}
+
+  <input type="checkbox" id="newsletter_checkbox" name="newsletter_checkbox">
+  <label for="newsletter_checkbox">Subscribe to the infrequent Digital Right to Repair newsletter.</label>
 
   <div class="button-container">
      <button type="submit" class="btn action-nav">Submit</button>
