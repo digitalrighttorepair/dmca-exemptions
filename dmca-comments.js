@@ -292,6 +292,9 @@ if (Meteor.isClient) {
 
       exemption_requests: function() {
          var categories = Session.get('exemptionCategories');
+         if (!categories) {
+            return [];
+         }
          var shorts = _.values(categories);
          var requests = [];
 
