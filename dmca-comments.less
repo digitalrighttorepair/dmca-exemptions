@@ -118,6 +118,7 @@ input[type=checkbox] + label:before {
 
 label {
    font-size: 22px;
+   cursor: pointer;
 }
 
 input[type=checkbox] + label:before { content: "\f10c"; } /* unchecked icon */
@@ -157,6 +158,9 @@ address {
    background: @black;
    color: @white;
 
+   i {
+      margin-left: 6px;
+   }
 
    &.top-action {
       padding: 11px 22px 10px;
