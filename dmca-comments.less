@@ -340,10 +340,18 @@ address {
    li {
       display: inline-block;
       float: left;
-      margin: 0 24px;
+      margin: 0 29px;
+      width: 15%;
+      text-align: center;
+
+      &.ifixit,
+      &.publicknowledge {
+         margin-top: 14px;
+      }
 
       @media @mobile {
-         margin: 24px !important;
+         width: 100%;
+         margin: 24px 0 !important;
       }
 
       &:first-of-type {
@@ -357,6 +365,7 @@ address {
 
    img {
       max-width: 150px;
+      max-height: 65px;
 
       @media @mobile {
          max-width: 100%;
