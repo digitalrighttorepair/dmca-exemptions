@@ -386,9 +386,8 @@ address {
 .logos {
    list-style-type: none;
    margin: 48px auto;
-   padding: 0;
+   padding: 0 100px;
    overflow: hidden;
-   width: 946px;
 
    @media @mobile {
       width: 100%;
@@ -396,13 +395,12 @@ address {
 
    li {
       display: inline-block;
-      float: left;
-      margin: 0 29px;
-      width: 15%;
+      margin: 10px 0;
       text-align: center;
 
       &.ifixit,
-      &.publicknowledge {
+      &.publicknowledge
+      &.oti {
          margin-top: 14px;
       }
 
