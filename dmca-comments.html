@@ -95,41 +95,9 @@
 </template>
 
 <template name="form">
-   {{> exemptionCategories}}
    {{> exemptions}}
    {{> letter}}
    {{> contact}}
-</template>
-
-<template name="exemptionCategories">
-<div class="main exemption-categories">
-   {{> back}}
-   <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-         <div class="page">
-            <h1 class="page-title">Proposed Exemptions</h1>
-            <h2 class="sub-title">Make your stand. What rights do you want to defend?</h2>
-            <form class="exemption-categories-form">
-               <p class="error-message hidden">You must select at least one category</p>
-               {{#each exemption_requests}}
-                  {{#with exemption}}
-                  <div class="exemption-group">
-                     <input type="checkbox" id="exemption_{{short}}" name="exemption_{{short}}" value="{{short}}" class="exemption-category-checkbox">
-                     <label for="exemption_{{short}}">{{name}}</label>
-                     <p>{{description}}</p>
-                  </div>
-                  {{/with}}
-               {{/each}}
-            </form>
-         </div>
-      </div>
-   </div>
-   <div class="row sticky-nav">
-      <div class="col-md-12">
-         <p>Select a category, then <a class="exemptions-continue btn action-nav">Continue <i class="fa fa-arrow-circle-right"></i></a></p>
-      </div>
-   </div>
-</div>
 </template>
 
 <template name="exemptions">
@@ -145,18 +113,19 @@
                {{#each exemption_requests}}
                   {{#with exemption}}
                      {{#each list}}
-                     <section class="accordion-row">
-                        <div class="accordion-container">
-                           <input type="checkbox" value="{{index}}" name="exemption_{{index}}" class="exemption-checkbox">
-                           <label for="exemption_{{index}}">{{right}}</label>
-                           <p class="links">Formal exemption requests: {{#each sources source}}<a class="accordion-link" href="{{value}}">({{index}})</a> {{/each}}</p>
-                        </div>
-                        <div class="accordion-slide">
-                           <p class="accordion-description">Freedom under consideration: &ldquo;{{description}}&rdquo;</p>
-                           <p class="exemption-label">Tell the Copyright Office why this would make a difference to you.</p>
-                           <textarea name="message_{{index}}" id="exemption_{{index}}_message" class="exemption-content form-control" rows="10">{{example}}</textarea>
-                        </div>
-                     </section>
+                        {{#if isRebuttal index}}
+                           <section class="accordion-row">
+                              <div class="accordion-container">
+                                 <input type="checkbox" value="{{index}}" name="exemption_{{index}}" class="exemption-checkbox">
+                                 <label for="exemption_{{index}}">{{right}}</label>
+                              </div>
+                              <div class="accordion-slide">
+                                 <p class="accordion-description">{{{rebuttal index}}}</p>
+                                 <p class="exemption-label"></p>
+                                 <textarea name="message_{{index}}" id="exemption_{{index}}_message" class="exemption-content form-control" rows="10"></textarea>
+                              </div>
+                           </section>
+                           {{/if}}
                      {{/each}}
                   {{/with}}
                {{/each}}

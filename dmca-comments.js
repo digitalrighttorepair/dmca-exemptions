@@ -84,18 +84,14 @@ var exemptions = [
 
 
 // For round 2, there are specific points that we need to counter
-var rebuttals = [{'index': '1', 'rebuttal_text': 'Several of the opponents of the exemption for college and university professors and students (both in traditional classes and in online courses) argued that screen capture technology has become so cheap, and attained such high quality, that it can be used for virtually any classroom purpose. Have you tried to use screen capture software, like Greenshot, VLC, Snagit, Camtasia, Movavi, Camstudio, Jing and WM Capture? If so, have you run into difficulties or limitations of that software? <br /> <br /> Opponents of this exemption also suggest that streaming services like Netflix, Flixster, anyclip.com, or the Movieclips YouTube channel provide alternatives to ripping DVDs or Blu-ray discs for educational purposes. Have you tried to use these services for teaching or for student projects? What limitations or difficulties have you encountered?'},
+var rebuttals = [{'index': '1', 'rebuttal_text': 'Several of the opponents of the exemption for college and university professors and students (both in traditional classes and in online courses) argued that screen capture technology has become so cheap, and attained such high quality, that it can be used for virtually any classroom purpose. Have you tried to use screen capture software, like Greenshot, VLC, Snagit, Camtasia, Movavi, Camstudio, Jing and WM Capture? If so, have you run into difficulties or limitations of that software? <br> <br> Opponents of this exemption also suggest that streaming services like Netflix, Flixster, anyclip.com, or the Movieclips YouTube channel provide alternatives to ripping DVDs or Blu-ray discs for educational purposes. Have you tried to use these services for teaching or for student projects? What limitations or difficulties have you encountered?'},
+   {'index': '3', 'rebuttal_text': 'Several of the opponents of the exemption for college and university professors and students (both in traditional classes and in online courses) argued that screen capture technology has become so cheap, and attained such high quality, that it can be used for virtually any classroom purpose. Have you tried to use screen capture software, like Greenshot, VLC, Snagit, Camtasia, Movavi, Camstudio, Jing and WM Capture? If so, have you run into difficulties or limitations of that software? <br> <br> Opponents of an exemption for MOOCs argue that the growth and availability of online courses have not been adversely affected by the lack of legal access to high quality video clips stored on DVD and Blu-ray. Have you sought to enroll in a MOOC that would likely involve embedded video (such as film and media studies courses) but found that such courses are remarkably scarce compared to courses in other disciplines like computer science? Have you proposed such courses to your university or MOOC provider but been refused due to perceived legal risk connected with ripping media from DVD, Blu-ray, or encrypted streams?'},
+   {'index': '11', 'rebuttal_text': 'The biggest objection to this request came from the TracFone, who argued that a broad unlocking cell phone exemption would benefit illegal cell phone traffickers, as opposed to consumers: <br> <br>\'TracFone respectfully  submits  that  proponents  arguments  that  real-world  consumers  will  suffer material  adverse  effects  absent  a  broad  unlocking  exemption  are  overstated  and  not supported  by  sufficient  objective  evidence  to  justify  the  Register  recommending  the requested exemptions.\'" <br> <br> We need your help to show the Copyright Office that real consumers are affected by this issue. Tell the Copyright Office how the restrictions on cell phone unlocking affects real-world consumers like you.'},
+   {'index': '21', 'rebuttal_text': 'This exemption would give consumer the legal ability to tinker with the software in their own vehiclesfrom automobiles to tractorsfor the purpose of legal modification, diagnosis and repair. Nearly every single major car maker, except Tesla, opposed the exemption outrightbecause they don\'t believe that you fully own your vehicle. General Motors, for example, argued that \'Proponents incorrectly conflate ownership of a vehicle with ownership of the underlying computer software in a vehicle. <br> <br> The Association of Equipment Manufacturers also told the Copyright Office that tinkerers don\'t have the chops to tinker around with the programming in their carand should therefore be barred from doing it\: While individual hobbyists and enthusiasts might desire to make repairs or modifications to their vehicles to, for example, modify their engine controllers, race their vehicles on private courses, or otherwise \'improve\' their vehicles, the record demonstrates that these individuals are unlikely to have the requisite skill, experience, and knowledge to ensure that these modifications comply with vehicle safety standards or environmental regulations.\'"<br> <br> We need help rebutting their arguments. Show the Copyright Office that real consumers are affected by this issue. Tell the Copyright Office how the restrictions on the software in vehicles affects real-world consumers like you.'},
+   {'index': '23', 'rebuttal_text': 'The Entertainment Software Association has claimed: <br> <br> \'The video game industry utilizes access controls in order to offer robust, interconnected online experiences that supplement game play. These immersive gaming experiences leverage users Internet connectivity to provide a suite of online network features to gamers. These features can include, for example, not only multiplayer game play, but also chat communications, sharing of user-generated content, leaderboards, points, badges and other achievement markers. Online network features for sports games might update roster information in real time to reflect injuries, trades or even increases or decreases in skill. And the online services may enable users to download customized outfits or other downloadable content. ... Consequently, contrary to EFFs assertions, multiplayer gameplay over the Internet is not a core functionality of the video game...\' <br> <br> We need your help to rebut the claim that online multiplayer is not a core part of modern day video games. If you view online multiplayer as central to your choice of whether to purchase a game, or have other comments on why online multiplayer is important to you as a player, they would be helpful here. Please let the copyright office know that you would like to be able to continue to play games you have lawfully purchased after the official servers have been shut down.'},
+   {'index': '26', 'rebuttal_text': 'The biggest objection to this request came from the 3D printing company Stratasys.  Among other things, Stratasys dismisses the idea that anyone actually wants to use unapproved materials in their 3D printers, or that legal uncertainty would reduce the chances of someone feeling comfortable doing so:<br> <br> \'The only alleged evidence of any person experiencing uncertainty [around using unapproved materials in a 3D printer] consists of a single quote from a comment on a web forum ... [a]t a minimum, this comment is merely conclusory or anecdotal evidence that is insufficient to meet the substantial adverse impact standard required by the statute.\' <br> <br> We need your help to show that there is more than a single person on a web forum interested in using materials in 3D printers without permission.  We need you to tell the Copyright Office that copyright law should not stand in the way of using whatever material you choose in a 3D printer.'}];
 
-		  {'index': '3', 'rebuttal_text': 'Several of the opponents of the exemption for college and university professors and students (both in traditional classes and in online courses) argued that screen capture technology has become so cheap, and attained such high quality, that it can be used for virtually any classroom purpose. Have you tried to use screen capture software, like Greenshot, VLC, Snagit, Camtasia, Movavi, Camstudio, Jing and WM Capture? If so, have you run into difficulties or limitations of that software? <br /> <br /> Opponents of an exemption for MOOCs argue that the growth and availability of online courses have not been adversely affected by the lack of legal access to high quality video clips stored on DVD and Blu-ray. Have you sought to enroll in a MOOC that would likely involve embedded video (such as film and media studies courses) but found that such courses are remarkably scarce compared to courses in other disciplines like computer science? Have you proposed such courses to your university or MOOC provider but been refused due to perceived legal risk connected with ripping media from DVD, Blu-ray, or encrypted streams?'},
-
-		  {'index': '11', 'rebuttal_text': 'The biggest objection to this request came from the TracFone, who argued that a broad unlocking cell phone exemption would benefit illegal cell phone traffickers, as opposed to consumers: <br /> <br />\'TracFone respectfully  submits  that  proponents  arguments  that  real-world  consumers  will  suffer material  adverse  effects  absent  a  broad  unlocking  exemption  are  overstated  and  not supported  by  sufficient  objective  evidence  to  justify  the  Register  recommending  the requested exemptions.\'" <br /> <br /> We need your help to show the Copyright Office that real consumers are affected by this issue. Tell the Copyright Office how the restrictions on cell phone unlocking affects real-world consumers like you.'},
-
-		  {'index': '21', 'rebuttal_text': 'This exemption would give consumer the legal ability to tinker with the software in their own vehiclesfrom automobiles to tractorsfor the purpose of legal modification, diagnosis and repair. Nearly every single major car maker, except Tesla, opposed the exemption outrightbecause they don\'t believe that you fully own your vehicle. General Motors, for example, argued that \'Proponents incorrectly conflate ownership of a vehicle with ownership of the underlying computer software in a vehicle. <br /> <br /> The Association of Equipment Manufacturers also told the Copyright Office that tinkerers don\'t have the chops to tinker around with the programming in their carand should therefore be barred from doing it\: While individual hobbyists and enthusiasts might desire to make repairs or modifications to their vehicles to, for example, modify their engine controllers, race their vehicles on private courses, or otherwise \'improve\' their vehicles, the record demonstrates that these individuals are unlikely to have the requisite skill, experience, and knowledge to ensure that these modifications comply with vehicle safety standards or environmental regulations.\'"<br /> <br /> We need help rebutting their arguments. Show the Copyright Office that real consumers are affected by this issue. Tell the Copyright Office how the restrictions on the software in vehicles affects real-world consumers like you.'},
-		  
-		  {'index': '23', 'rebuttal_text': 'The Entertainment Software Association has claimed: <br /> <br /> \'The video game industry utilizes access controls in order to offer robust, interconnected online experiences that supplement game play. These immersive gaming experiences leverage users Internet connectivity to provide a suite of online network features to gamers. These features can include, for example, not only multiplayer game play, but also chat communications, sharing of user-generated content, leaderboards, points, badges and other achievement markers. Online network features for sports games might update roster information in real time to reflect injuries, trades or even increases or decreases in skill. And the online services may enable users to download customized outfits or other downloadable content. ... Consequently, contrary to EFFs assertions, multiplayer gameplay over the Internet is not a core functionality of the video game...\' <br /> <br /> We need your help to rebut the claim that online multiplayer is not a core part of modern day video games. If you view online multiplayer as central to your choice of whether to purchase a game, or have other comments on why online multiplayer is important to you as a player, they would be helpful here. Please let the copyright office know that you would like to be able to continue to play games you have lawfully purchased after the official servers have been shut down.'},
-
-		  {'index': '26', 'rebuttal_text': 'The biggest objection to this request came from the 3D printing company Stratasys.  Among other things, Stratasys dismisses the idea that anyone actually wants to use unapproved materials in their 3D printers, or that legal uncertainty would reduce the chances of someone feeling comfortable doing so:<br /> <br /> \'The only alleged evidence of any person experiencing uncertainty [around using unapproved materials in a 3D printer] consists of a single quote from a comment on a web forum ... [a]t a minimum, this comment is merely conclusory or anecdotal evidence that is insufficient to meet the substantial adverse impact standard required by the statute.\' <br /> <br /> We need your help to show that there is more than a single person on a web forum interested in using materials in 3D printers without permission.  We need you to tell the Copyright Office that copyright law should not stand in the way of using whatever material you choose in a 3D printer.'}];
-
+var rebuttal_indexes = ['1', '3', '11', '21', '23', '26'];
 var Collections = {};
 var Schemas = {};
 
@@ -161,9 +157,9 @@ Schemas.Contact = new SimpleSchema({
    }
 });
 
-Collections.Exemptions = new Mongo.Collection("exemptions");
+Collections.Exemptions = new Mongo.Collection("exemptions_rebuttals");
 
-Collections.Contact = new Mongo.Collection("contact");
+Collections.Contact = new Mongo.Collection("contact_rebuttals");
 Collections.Contact.attachSchema(Schemas.Contact);
 
 Collections.Exemptions.allow({
@@ -196,7 +192,6 @@ if (Meteor.isClient) {
    });
 
    Router.route('/form');
-   Router.route('/exemptionCategories');
    Router.route('/exemptions');
    Router.route('/success');
 
@@ -226,12 +221,6 @@ if (Meteor.isClient) {
          onSuccess: function(operation, result, template) {
             window.location = '/success';    
          } 
-      }
-   });
-
-   Template.exemptionCategories.helpers({
-      exemption_requests: function() {
-         return exemptions;
       }
    });
 
@@ -266,37 +255,6 @@ if (Meteor.isClient) {
       }
    });
 
-
-   Template.exemptionCategories.events({
-      'click .exemption-category-checkbox': function(ev) {
-         var message = $('.exemption-categories-form').find('.error-message');
-         if ($(ev.target).is(':checked')) {
-            message.addClass('hidden');
-         } else {
-            message.removeClass('hidden');
-         }
-      },
-      'click .exemptions-continue': function(ev) {
-         ev.preventDefault();
-         var exemptionsForm = $('.exemption-categories-form');
-         var categories = _.object(_.filter(exemptionsForm.serializeArray(), function(value) { return value !== ""; }).map(function(el) { return [el.name, el.value]; }));
-
-         if ($.isEmptyObject(categories)) {
-            exemptionsForm.find('.error-message').removeClass('hidden');
-            $('html, body').animate({
-               scrollTop: exemptionsForm.offset().top
-            }, 1000);
-            return;
-         }
-
-         Session.set('exemptionCategories', categories);
-
-         $('.exemption-categories').hide();
-         $('.exemptions').show();
-         topOfPage();
-      }
-   });
-
    Template.exemptions.helpers({
       sources: function(sources) {
          var result = _.map(sources.split(", "), function(value, index){
@@ -308,25 +266,19 @@ if (Meteor.isClient) {
       checked: function(checked) {
          return checked ? "checked" : "";
       },
+      isRebuttal: function(index) {
+         console.log(rebuttal_indexes);
+         console.log(_.contains(rebuttal_indexes, index));
+         return _.contains(rebuttal_indexes, index);
+      },
+      rebuttal: function(index) {
+         return _.find(rebuttals, function(rebuttal) {
+            return rebuttal.index == index; 
+         }).rebuttal_text;
+      },
 
       exemption_requests: function() {
-         var categories = Session.get('exemptionCategories');
-         if (!categories) {
-            return [];
-         }
-         var shorts = _.values(categories);
-         var requests = [];
-
-         // grab exemption categories that are selected and their short names
-         _.each(exemptions, function(el, index, list) {
-            _.each(shorts, function(short) {
-               if (el.exemption.short === short) {
-                  requests.push(el);
-               }
-            });
-         });
-
-         return requests;
+         return exemptions;
       },
 
       selected_categories: function() {
