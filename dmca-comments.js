@@ -231,9 +231,6 @@ if (Meteor.isClient) {
          if (container.hasClass('contact')) {
             $('.contact').hide(); 
             $('.letter').show();
-         } else if (container.hasClass('exemptions')) {
-            $('.exemptions').hide(); 
-            $('.exemption-categories').show();
          } else if (container.hasClass('letter')) {
             $('.letter').hide(); 
             $('.exemptions').show();
@@ -267,8 +264,6 @@ if (Meteor.isClient) {
          return checked ? "checked" : "";
       },
       isRebuttal: function(index) {
-         console.log(rebuttal_indexes);
-         console.log(_.contains(rebuttal_indexes, index));
          return _.contains(rebuttal_indexes, index);
       },
       rebuttal: function(index) {
@@ -294,7 +289,6 @@ if (Meteor.isClient) {
    Template.exemptions.events({
       'click .exemption-checkbox': function(ev) {
          var message = $('.exemptions-form').find('.error-message');
-         console.log('message');
          if ($(ev.target).is(':checked')) {
             message.addClass('hidden');
          } else {
